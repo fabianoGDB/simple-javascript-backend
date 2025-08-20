@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Alunos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f4f6;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: 40px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+      }
+
+      .search-order {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .search-order input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      .search-order button {
+        background-color: #f3f4f6;
+        border: 1px solid #ccc;
+        padding: 10px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #e5e7eb;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        background-color: #fafafa;
+      }
+
+      .card span {
+        font-weight: bold;
+      }
+
+      .actions i {
+        margin-left: 15px;
+        cursor: pointer;
+      }
+
+      .actions i:hover {
+        opacity: 0.7;
+      }
+
+      .delete {
+        color: red;
+      }
+
+      .view,
+      .edit {
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-order">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Pesquisar por nome..."
+        />
+        <button onclick="sortList()">↕ Ordenar A-Z</button>
+      </div>
+
+      <div class="card-list" id="studentList">
+        <!-- Lista dinâmica de alunos -->
+      </div>
+    </div>
+
+    <script>
+      let students = [
+        "JOÃO SILVA SANTOS",
+        "MARIA OLIVEIRA COSTA",
+        "VITORIA BRITO MOTA",
+      ];
+
+      function renderList(filtered = null) {
+        const listContainer = document.getElementById("studentList");
+        listContainer.innerHTML = "";
+
+        const source = filtered || students;
+
+        source.forEach((name) => {
+          const card = document.createElement("div");
+          card.className = "card";
+          card.innerHTML = `
+          <span>${name}</span>
+          <div class="actions">
+            <i class="delete" onclick="deleteStudent('${name}')">🗑️</i>
+            <i class="view" title="Visualizar">👁️</i>
+            <i class="edit" title="Editar">✏️</i>
+          </div>
+        `;
+          listContainer.appendChild(card);
+        });
+      }
+
+      function deleteStudent(name) {
+        students = students.filter((student) => student !== name);
+        renderList();
+      }
+
+      function sortList() {
+        students.sort((a, b) => a.localeCompare(b));
+        renderList();
+      }
+
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = students.filter((name) =>
+          name.toLowerCase().includes(query)
+        );
+        renderList(filtered);
+      });
+
+      renderList();
+    </script>
+  </body>
+</html>
