@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notas Detalhadas</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 5px;
+      }
+
+      p.subtitle {
+        text-align: center;
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      th,
+      td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+
+      td.grade {
+        font-weight: bold;
+      }
+
+      td.grade.green {
+        background-color: #c8f7dc;
+      }
+
+      td.grade.yellow {
+        background-color: #fef3c7;
+      }
+
+      @media (max-width: 768px) {
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+          display: block;
+        }
+
+        thead {
+          display: none;
+        }
+
+        tr {
+          margin-bottom: 15px;
+          background-color: white;
+          padding: 10px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        td {
+          padding: 10px;
+          text-align: left;
+          position: relative;
+        }
+
+        td::before {
+          content: attr(data-label);
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Notas Detalhadas</h1>
+    <p class="subtitle">Todas as notas por disciplina e bimestre</p>
+
+    <div id="table-container"></div>
+
+    <script>
+      const dados = [
+        {
+          area: "C. HUMANAS",
+          disciplinas: [
+            { nome: "FIL", bimestres: [8.5, 9.0, 7.5, 8.8] },
+            { nome: "IHEG", bimestres: [7.8, 8.5, 9.0, 8.2] },
+          ],
+        },
+        {
+          area: "Linguagens",
+          disciplinas: [
+            { nome: "ART", bimestres: [9.0, 8.8, 9.2, 9.5] },
+            { nome: "EFI", bimestres: [8.5, 8.9, 9.0, 9.2] },
+          ],
+        },
+      ];
+
+      function calcularMedia(notas) {
+        const soma = notas.reduce((acc, nota) => acc + nota, 0);
+        return (soma / notas.length).toFixed(2);
+      }
+
+      function getGradeClass(nota) {
+        if (nota >= 9) return "green";
+        if (nota >= 8) return "yellow";
+        return "";
+      }
+
+      function renderTable(dados) {
+        let html = `
+        <table>
+          <thead>
+            <tr>
+              <th>Área</th>
+              <th>Disciplina</th>
+              <th>1º Bim</th>
+              <th>2º Bim</th>
+              <th>3º Bim</th>
+              <th>4º Bim</th>
+              <th>Média</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+        dados.forEach((grupo) => {
+          grupo.disciplinas.forEach((disciplina, index) => {
+            const media = calcularMedia(disciplina.bimestres);
+            html += "<tr>";
+            if (index === 0) {
+              html += `<td rowspan="${grupo.disciplinas.length}" data-label="Área">${grupo.area}</td>`;
+            }
+            html += `<td data-label="Disciplina">${disciplina.nome}</td>`;
+            disciplina.bimestres.forEach((nota, i) => {
+              const cls = getGradeClass(nota);
+              html += `<td class="grade ${cls}" data-label="${
+                i + 1
+              }º Bim">${nota}</td>`;
+            });
+            html += `<td class="grade ${getGradeClass(
+              media
+            )}" data-label="Média">${media}</td>`;
+            html += "</tr>";
+          });
+        });
+
+        html += "</tbody></table>";
+        document.getElementById("table-container").innerHTML = html;
+      }
+
+      renderTable(dados);
+    </script>
+  </body>
+</html>

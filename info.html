@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard do Aluno</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background-color: #f9f9f9;
+      }
+
+      .card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .avatar {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+
+      .info {
+        flex: 1;
+      }
+
+      .info h2 {
+        margin: 0;
+      }
+
+      .badges {
+        margin-top: 0.5rem;
+        color: #555;
+      }
+
+      .charts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .chart,
+      .table {
+        flex: 1 1 45%;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+
+      th,
+      td {
+        padding: 0.5rem;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+      }
+
+      th {
+        background-color: #f0f0f0;
+      }
+
+      .tag {
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .tag.green {
+        background: #d1fae5;
+        color: #065f46;
+      }
+      .tag.yellow {
+        background: #fef9c3;
+        color: #92400e;
+      }
+      .tag.red {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card header">
+      <img src="https://via.placeholder.com/100" alt="Aluno" class="avatar" />
+      <div class="info">
+        <h2>JOÃO SILVA SANTOS</h2>
+        <div class="badges">
+          Frequência: <strong>89.23%</strong> | Média Geral:
+          <strong>8.62</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="card charts">
+      <div class="chart">
+        <h3>Frequência</h3>
+        <p>Gráfico radial aqui</p>
+      </div>
+
+      <div class="chart">
+        <h3>Evolução por Área</h3>
+        <p>Gráfico de linha aqui</p>
+      </div>
+    </div>
+
+    <div class="card chart">
+      <h3>Desempenho em Linguagens</h3>
+      <p>Gráfico de barras aqui</p>
+    </div>
+
+    <div class="card table">
+      <h3>Notas Detalhadas</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Área</th>
+            <th>Disciplina</th>
+            <th>1º Bim</th>
+            <th>2º Bim</th>
+            <th>3º Bim</th>
+            <th>4º Bim</th>
+            <th>Média</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">Linguagens</td>
+            <td>ART</td>
+            <td class="tag green">9.0</td>
+            <td class="tag green">8.8</td>
+            <td class="tag green">9.2</td>
+            <td class="tag green">9.5</td>
+            <td class="tag green">9.13</td>
+          </tr>
+          <tr>
+            <td>ING</td>
+            <td class="tag yellow">7.8</td>
+            <td class="tag yellow">8.1</td>
+            <td class="tag yellow">8.8</td>
+            <td class="tag yellow">8.8</td>
+            <td class="tag yellow">8.37</td>
+          </tr>
+          <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

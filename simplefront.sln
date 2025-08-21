@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{D82C56D6-B2CD-F611-9E31-04638F7EC30E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v1", "v1", "{A4D72EBD-9445-6A93-FA6E-15251513F268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolETL.Console", "api\v1\SchoolETL.Console\SchoolETL.Console.csproj", "{5D34FC39-22A2-688C-51A9-E6D83B24E7AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D34FC39-22A2-688C-51A9-E6D83B24E7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D34FC39-22A2-688C-51A9-E6D83B24E7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D34FC39-22A2-688C-51A9-E6D83B24E7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D34FC39-22A2-688C-51A9-E6D83B24E7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4D72EBD-9445-6A93-FA6E-15251513F268} = {D82C56D6-B2CD-F611-9E31-04638F7EC30E}
+		{5D34FC39-22A2-688C-51A9-E6D83B24E7AE} = {A4D72EBD-9445-6A93-FA6E-15251513F268}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FA2CA98-ED2F-4C27-999F-E6BD71DF15B4}
+	EndGlobalSection
+EndGlobal

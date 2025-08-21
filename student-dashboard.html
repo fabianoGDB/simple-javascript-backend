@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desempenho em Linguagens</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9fafb;
+        padding: 2rem;
+      }
+      .chart-container {
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        background-color: white;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+      }
+      p {
+        color: #555;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chart-container">
+      <h2>Desempenho em Linguagens</h2>
+      <p>Notas por disciplina ao longo dos bimestres</p>
+      <canvas id="linguagensChart" height="300"></canvas>
+    </div>
+
+    <script>
+      const ctx = document.getElementById("linguagensChart").getContext("2d");
+
+      const chart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["1º Bim", "2º Bim", "3º Bim", "4º Bim"],
+          datasets: [
+            {
+              label: "ART",
+              data: [9.4, 9.2, 9.5, 9.7],
+              backgroundColor: "#8884d8",
+            },
+            {
+              label: "EFI",
+              data: [9.1, 9.3, 9.4, 9.5],
+              backgroundColor: "#82ca9d",
+            },
+            {
+              label: "ING",
+              data: [8.3, 8.5, 8.9, 9.1],
+              backgroundColor: "#ffc658",
+            },
+            {
+              label: "LPR",
+              data: [8.7, 9.0, 9.3, 9.4],
+              backgroundColor: "#ff7300",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 10,
+              ticks: {
+                stepSize: 1,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              position: "bottom",
+            },
+            tooltip: {
+              mode: "index",
+              intersect: false,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
