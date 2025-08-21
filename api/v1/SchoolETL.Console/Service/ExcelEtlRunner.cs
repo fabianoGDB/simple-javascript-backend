@@ -2,9 +2,10 @@ using ClosedXML.Excel;
 using Microsoft.EntityFrameworkCore;
 using SchoolETL.ConsoleApp.Data;
 using SchoolETL.ConsoleApp.Models;
+using SchoolETL.ConsoleApp.Service;
 using System.Text.RegularExpressions;
 
-namespace SchoolETL.ConsoleApp.Service;
+namespace SchoolETL.Api.Service;
 
 public record ImportSummary(Guid ImportId, int AlunosInseridos, int DisciplinasInseridas, int NotasInseridas, int LinhasIgnoradas, List<string> Avisos);
 
@@ -29,7 +30,6 @@ public class ExcelEtlRunner
 
         int notasInseridas = 0, disciplinasInseridas = 0, linhasIgnoradas = 0;
 
-        // Registros (frequência geral, situação curso)
         if (wb.Worksheets.TryGetWorksheet("Registros", out var wsReg))
         {
             _db.ImportSheets.Add(new ImportSheet { ImportId = batch.Id, Name = wsReg.Name });
@@ -37,9 +37,8 @@ public class ExcelEtlRunner
             ImportRegistros(wsReg, avisos, batch.Id);
             await _db.SaveChangesAsync();
         }
-        else avisos.Add("Aba 'Registros' não encontrada.");
+        else avisos.Add("Aba 'Registros' não encontrada – frequências gerais não serão carregadas.");
 
-        // Etapas 1..4
         for (int e = 1; e <= 4; e++)
         {
             if (wb.Worksheets.TryGetWorksheet($"Etapa {e}", out var ws))
@@ -47,19 +46,22 @@ public class ExcelEtlRunner
                 _db.ImportSheets.Add(new ImportSheet { ImportId = batch.Id, Name = ws.Name });
                 await _db.SaveChangesAsync();
 
-                notasInseridas += await ImportEtapaAsync(ws, etapaId: e, periodo.Id, batch.Id,
-                    ref disciplinasInseridas, ref linhasIgnoradas, avisos);
+                var r = await ImportEtapaAsync(ws, etapaId: e, periodo.Id, batch.Id, avisos);
+                notasInseridas += r.Inseridas;
+                disciplinasInseridas += r.DisciplinasNovas;
+                linhasIgnoradas += r.LinhasIgnoradas;
             }
         }
 
-        // Etapa Final
         if (wb.Worksheets.TryGetWorksheet("Etapa Final", out var wsFinal))
         {
             _db.ImportSheets.Add(new ImportSheet { ImportId = batch.Id, Name = wsFinal.Name });
             await _db.SaveChangesAsync();
 
-            notasInseridas += await ImportEtapaAsync(wsFinal, etapaId: 99, periodo.Id, batch.Id,
-                ref disciplinasInseridas, ref linhasIgnoradas, avisos);
+            var rFinal = await ImportEtapaAsync(wsFinal, etapaId: 99, periodo.Id, batch.Id, avisos);
+            notasInseridas += rFinal.Inseridas;
+            disciplinasInseridas += rFinal.DisciplinasNovas;
+            linhasIgnoradas += rFinal.LinhasIgnoradas;
         }
 
         var alunosInseridos = await _db.Alunos.CountAsync();
@@ -100,14 +102,14 @@ public class ExcelEtlRunner
         }
     }
 
-    private async Task<int> ImportEtapaAsync(IXLWorksheet ws, int etapaId, int periodoId, Guid batchId,
-        ref int disciplinasInseridas, ref int linhasIgnoradas, List<string> avisos)
+    private async Task<(int Inseridas, int DisciplinasNovas, int LinhasIgnoradas)> ImportEtapaAsync(
+        IXLWorksheet ws, int etapaId, int periodoId, Guid batchId, List<string> avisos)
     {
         var used = ws.RangeUsed();
-        if (used is null) return 0;
+        if (used is null) return (0, 0, 0);
 
         var headerRow = used.Rows().FirstOrDefault(r => r.Cells().Any(c => c.GetString().Trim().Equals("Aluno", StringComparison.OrdinalIgnoreCase)));
-        if (headerRow is null) { avisos.Add($"Cabeçalho 'Aluno' não encontrado na aba {ws.Name}."); return 0; }
+        if (headerRow is null) { avisos.Add($"Cabeçalho 'Aluno' não encontrado na aba {ws.Name}."); return (0, 0, 0); }
 
         int colAluno = headerRow.Cells().First(c => c.GetString().Trim().Equals("Aluno", StringComparison.OrdinalIgnoreCase)).Address.ColumnNumber;
         var topHeaderRow = ws.Row(headerRow.RowNumber() - 1);
@@ -132,12 +134,15 @@ public class ExcelEtlRunner
         }
 
         var bimestreId = etapaId is >= 1 and <= 4 ? etapaId : 4;
-        int inserted = 0;
+
+        int inseridas = 0;
+        int disciplinasNovas = 0;
+        int ignoradas = 0;
 
         foreach (var row in ws.RowsUsed().Where(r => r.RowNumber() > headerRow.RowNumber()))
         {
             var nome = NameNormalizer.Clean(row.Cell(colAluno).GetString());
-            if (string.IsNullOrWhiteSpace(nome)) { linhasIgnoradas++; continue; }
+            if (string.IsNullOrWhiteSpace(nome)) { ignoradas++; continue; }
 
             var key = NameNormalizer.Key(nome);
             var aluno = _db.Alunos.Local.FirstOrDefault(a => NameNormalizer.Key(a.Nome) == key)
@@ -158,7 +163,7 @@ public class ExcelEtlRunner
                 int? situacaoId = await ResolveSituacaoIdAsync(sitTxt);
 
                 var (curso, disciplina) = await ResolveCursoEDisciplinaAsync(label, batchId);
-                if (curso.WasInserted || disciplina.WasInserted) disciplinasInseridas++;
+                if (curso.WasInserted || disciplina.WasInserted) disciplinasNovas++;
 
                 var fato = new FatoNota
                 {
@@ -173,12 +178,12 @@ public class ExcelEtlRunner
                     Nota = nota
                 };
                 _db.FatoNotas.Add(fato);
-                inserted++;
+                inseridas++;
             }
         }
 
         await _db.SaveChangesAsync();
-        return inserted;
+        return (inseridas, disciplinasNovas, ignoradas);
     }
 
     private async Task<(bool WasInserted, Curso Entity)> EnsureCursoAsync(string sigla, string? descricao, Guid batchId)
@@ -213,8 +218,8 @@ public class ExcelEtlRunner
         ResolveCursoEDisciplinaAsync(string raw, Guid batchId)
     {
         var txt = NameNormalizer.Clean(raw) ?? raw;
-        var codeMatch = Regex.Match(txt, "[A-Z]{2,}\\.?\\d+");
-        var cargaMatch = Regex.Match(txt, "\\d+H\\s*de\\s*\\d+H", RegexOptions.IgnoreCase);
+        var codeMatch = Regex.Match(txt, @"[A-Z]{2,}\.?\d+");
+        var cargaMatch = Regex.Match(txt, @"\d+H\s*de\s*\d+H", RegexOptions.IgnoreCase);
         var sigla = codeMatch.Success ? codeMatch.Value : txt;
         var carga = cargaMatch.Success ? cargaMatch.Value.ToUpperInvariant() : null;
 
