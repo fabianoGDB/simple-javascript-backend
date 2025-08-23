@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Boletim do Aluno</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 20px;
+      }
+
+      .container {
+        max-width: 1300px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 16px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 6px;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      th {
+        background-color: #e9ecef;
+        font-weight: bold;
+      }
+
+      .section {
+        margin-top: 20px;
+      }
+
+      .foto-aluno {
+        width: 110px;
+        height: 140px;
+        border: 2px solid #ccc;
+        object-fit: cover;
+      }
+
+      .grade-green {
+        background-color: #d1fae5;
+      }
+
+      .grade-blue {
+        background-color: #e0f2fe;
+      }
+
+      .grade-yellow {
+        background-color: #fef9c3;
+      }
+
+      .grade-red {
+        background-color: #fecaca;
+      }
+
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .box {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .title-bar {
+        background-color: #e9ecef;
+        padding: 6px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .info-box {
+        border: 1px solid #ccc;
+        min-height: 60px;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="history.back()">← Voltar para Lista</button>
+      <h2>JOÃO SILVA SANTOS</h2>
+
+      <!-- Tabela principal -->
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Bim</th>
+            <th colspan="3">C. HUMANAS</th>
+            <th colspan="3">Ciências da Natureza</th>
+            <th colspan="5">Linguagens</th>
+            <th colspan="1">MAT</th>
+            <th colspan="6">D. Técnicas</th>
+          </tr>
+          <tr>
+            <th>FIL</th>
+            <th>IHEG</th>
+            <th>Área</th>
+            <th>IBEQ</th>
+            <th>FIS</th>
+            <th>Área</th>
+            <th>ART</th>
+            <th>EFI</th>
+            <th>ING</th>
+            <th>LPR</th>
+            <th>Área</th>
+            <th>ALPO</th>
+            <th>DWS1</th>
+            <th>GBD1</th>
+            <th>SOP</th>
+            <th>IHD</th>
+            <th>MAAC</th>
+            <th>Área</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1º</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-yellow">7.8</td>
+            <td class="grade-blue">8.15</td>
+            <td class="grade-yellow">7.5</td>
+            <td class="grade-yellow">8.0</td>
+            <td class="grade-yellow">7.75</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-yellow">7.8</td>
+            <td class="grade-yellow">8.2</td>
+            <td class="grade-blue">8.38</td>
+            <td class="grade-yellow">7.5</td>
+            <td>-</td>
+            <td>-</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-blue">8.83</td>
+          </tr>
+          <tr>
+            <td>2º</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-blue">8.75</td>
+            <td class="grade-yellow">7.8</td>
+            <td class="grade-yellow">8.0</td>
+            <td class="grade-yellow">8.0</td>
+            <td class="grade-yellow">8.8</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-yellow">8.1</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-blue">8.58</td>
+            <td class="grade-yellow">8.0</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-green">9.0</td>
+          </tr>
+          <tr>
+            <td>3º</td>
+            <td class="grade-yellow">7.5</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-blue">8.25</td>
+            <td class="grade-yellow">8.8</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-yellow">8.65</td>
+            <td class="grade-green">9.2</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-yellow">8.6</td>
+            <td class="grade-yellow">8.9</td>
+            <td class="grade-blue">8.93</td>
+            <td class="grade-yellow">8.6</td>
+            <td class="grade-yellow">8.5</td>
+            <td class="grade-yellow">8.9</td>
+            <td class="grade-yellow">8.8</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-green">9.6</td>
+            <td class="grade-green">9.37</td>
+          </tr>
+          <tr>
+            <td>4º</td>
+            <td class="grade-yellow">8.8</td>
+            <td class="grade-yellow">8.2</td>
+            <td class="grade-blue">8.5</td>
+            <td class="grade-green">9.1</td>
+            <td class="grade-yellow">8.9</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-green">9.5</td>
+            <td class="grade-green">9.2</td>
+            <td class="grade-yellow">8.8</td>
+            <td class="grade-green">9.1</td>
+            <td class="grade-green">9.15</td>
+            <td class="grade-yellow">9.0</td>
+            <td class="grade-yellow">8.8</td>
+            <td class="grade-yellow">8.9</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-green">9.0</td>
+            <td class="grade-green">9.6</td>
+            <td class="grade-green">9.13</td>
+          </tr>
+          <tr>
+            <td>Rec</td>
+            <td colspan="18">-</td>
+          </tr>
+          <tr>
+            <td><strong>Ano</strong></td>
+            <td class="grade-yellow">8.45</td>
+            <td class="grade-yellow">8.38</td>
+            <td class="grade-blue">8.41</td>
+            <td class="grade-yellow">8.30</td>
+            <td class="grade-yellow">8.35</td>
+            <td class="grade-yellow">8.30</td>
+            <td class="grade-green">9.13</td>
+            <td class="grade-yellow">8.90</td>
+            <td class="grade-yellow">8.32</td>
+            <td class="grade-yellow">8.68</td>
+            <td class="grade-blue">8.76</td>
+            <td class="grade-yellow">8.25</td>
+            <td class="grade-red">0.00</td>
+            <td class="grade-yellow">8.60</td>
+            <td class="grade-yellow">8.88</td>
+            <td class="grade-yellow">8.85</td>
+            <td class="grade-green">9.53</td>
+            <td class="grade-green">9.08</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Foto + Freq + Situação -->
+      <div class="grid">
+        <div class="box">
+          <img src="https://via.placeholder.com/110x140" class="foto-aluno" />
+        </div>
+
+        <div class="box">
+          <table>
+            <thead>
+              <tr>
+                <th>Freq (%)</th>
+                <th>Bim</th>
+                <th>Áreas</th>
+                <th>Disciplinas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="6" class="grade-green"><strong>89.23%</strong></td>
+                <td>1º</td>
+                <td>5</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>2º</td>
+                <td>5</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>3º</td>
+                <td>5</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>4º</td>
+                <td>5</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>Rec</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td>Ano</td>
+                <td>5</td>
+                <td>15</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="box">
+          <div class="title-bar">Situação</div>
+          <div class="info-box"></div>
+          <div class="title-bar">Áreas em Conselho</div>
+          <div class="info-box"></div>
+        </div>
+      </div>
+
+      <!-- Tabela inferior -->
+      <div class="section">
+        <table>
+          <thead>
+            <tr>
+              <th>Retif. de Frequência</th>
+              <th>Resultado</th>
+              <th>Período a ser Retificado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
