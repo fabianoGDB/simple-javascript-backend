@@ -1,7 +1,120 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Importar Planilhas</PageTitle>
 
-<h1>Hello, world!</h1>
+@using System.IO
+@using Services
+@using Microsoft.AspNetCore.Components.Forms
+@inject FileService fileService
 
-Welcome to your new app.
+
+<div class="page-wrapper">
+    <div class="card">
+        <form @onsubmit="OnSubmit">
+            <div class="icon">📄</div>
+            <h2>Sistema de Notas</h2>
+            <p>Importe sua planilha de notas para visualizar os dados dos alunos</p>
+            <InputFile OnChange="OnInputFileChange" accept=".xlsx" class="file-input" />
+            <p class="formats">Formatos suportados: .xlsx, .xls, .csv</p>
+            <button class="btn" type="submit"> Importar Planilha</button>
+        </form>
+    </div>
+</div>
+
+@code {
+    string Message = "Importe sua planilha de notas para visualizar os dados dos alunos";
+    IBrowserFile? selectedFile;
+
+    void OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        selectedFile = e.File;
+        Message = $"Arquivo selecionado: {selectedFile.Name} ({selectedFile.Size / 1024} KB)";
+        StateHasChanged();
+    }
+
+    async Task OnSubmit(){
+        if (selectedFile is null){
+            return;
+        }
+        var response = await fileService.UploadFile(selectedFile);
+        StateHasChanged();
+    }
+}
+
+<style>
+    .page-wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom right, #e3ebfb, #f1f5ff);
+    }
+
+    .card {
+        background-color: white;
+        padding: 40px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        max-width: 400px;
+        width: 90%;
+        transition: all 0.3s ease;
+    }
+
+        .card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+    .icon {
+        font-size: 40px;
+        background-color: #e0edff;
+        color: #005eff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px auto;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .btn {
+        margin-top: 20px;
+        background-color: #1a57ff;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #004de0;
+        }
+
+    .formats {
+        font-size: 12px;
+        color: #777;
+        margin-top: 10px;
+    }
+
+    /* .file-input { */
+    /*     display: none; */
+    /* } */
+</style>

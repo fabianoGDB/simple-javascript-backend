@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A+5M/g8TcUh9/acWlbHh1YKOsiM6GOswoh/fqkyjlF8=",
+  "Hash": "XgFY59HhtJOoQWjsGR//WeW5Q3Vbod95YbRKSqoKFeA=",
   "Source": "ImportadorNotasApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "jgfivnw7sz",
-      "Integrity": "wxlaeZIppulDCEwv6eqzasBzb1d1/5YzC+Qh1xQK8gY=",
+      "Fingerprint": "jnic3llh22",
+      "Integrity": "b9BNW5Cj7yFLApPmfe0CfVKUbNRhy0lnkPMf0Sz5v6E=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\blazor.boot.json"
@@ -262,8 +262,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "lznx5k1q21",
-      "Integrity": "sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w=",
+      "Fingerprint": "wut4xp2zy9",
+      "Integrity": "KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net9.0\\ImportadorNotasApp.pdb"
@@ -283,8 +283,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "92rq9hh4bo",
-      "Integrity": "f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo=",
+      "Fingerprint": "udu3v1xbm4",
+      "Integrity": "kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\webcil\\ImportadorNotasApp.wasm"
@@ -584,6 +584,48 @@
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.DependencyInjection.wasm"
     },
     {
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.Abstractions.wasm",
+      "SourceId": "ImportadorNotasApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Diagnostics.Abstractions#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "mdr4398mwf",
+      "Integrity": "ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.Diagnostics.Abstractions.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.wasm",
+      "SourceId": "ImportadorNotasApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Diagnostics#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "4e28mmhchr",
+      "Integrity": "5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.Diagnostics.wasm"
+    },
+    {
       "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.FileProviders.Abstractions.wasm",
       "SourceId": "ImportadorNotasApp",
       "SourceType": "Computed",
@@ -647,6 +689,27 @@
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.FileSystemGlobbing.wasm"
     },
     {
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Http.wasm",
+      "SourceId": "ImportadorNotasApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Http#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "19whzah939",
+      "Integrity": "hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.Http.wasm"
+    },
+    {
       "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.wasm",
       "SourceId": "ImportadorNotasApp",
       "SourceType": "Computed",
@@ -687,6 +750,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.Logging.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.ConfigurationExtensions.wasm",
+      "SourceId": "ImportadorNotasApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions#[.{fingerprint}]!.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "Fingerprint": "cy00pk0ov5",
+      "Integrity": "LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\webcil\\Microsoft.Extensions.Options.ConfigurationExtensions.wasm"
     },
     {
       "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.wasm",
@@ -5939,7 +6023,7 @@
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Net.Requests.wasm"
     },
     {
-      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\9uhxsvbs1m-jgfivnw7sz.gz",
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\9uhxsvbs1m-jnic3llh22.gz",
       "SourceId": "ImportadorNotasApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\",
@@ -5953,11 +6037,32 @@
       "RelatedAsset": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "yjzy26czw7",
-      "Integrity": "foJPWyIoYwIDPfsRxSwn7krgOM7imIJmZXFuJedTMBo=",
+      "Fingerprint": "f1sqr110bi",
+      "Integrity": "c7+Tw+xvBixK74bqirv58T0BL1xm43w4zQhU/vVS4M8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\blazor.boot.json"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\a18dxfohzp-cy00pk0ov5.gz",
+      "SourceId": "ImportadorNotasApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions#[.{fingerprint=cy00pk0ov5}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.ConfigurationExtensions.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "x0rht7d0z8",
+      "Integrity": "ESyFQpjtOvg7UGOFKxvonwt+W1aBe4ADAjNHXRT8+4U=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.ConfigurationExtensions.wasm"
     },
     {
       "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\aebpl99ydi-ol0drhql6s.gz",
@@ -6023,12 +6128,12 @@
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-lznx5k1q21.gz",
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-wut4xp2zy9.gz",
       "SourceId": "ImportadorNotasApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/ImportadorNotasApp#[.{fingerprint=lznx5k1q21}]!.pdb.gz",
+      "RelativePath": "_framework/ImportadorNotasApp#[.{fingerprint=wut4xp2zy9}]!.pdb.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -6037,8 +6142,8 @@
       "RelatedAsset": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "bziykdsjf9",
-      "Integrity": "aQNltkM0FEy5zLo1yI26MzZ847oiDpUGYiSZobqJjhQ=",
+      "Fingerprint": "eo6ekalvfi",
+      "Integrity": "stptG0OxwiCwpat+alNbKyaf4r6/pru3IRAhKK3N0yY=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.pdb"
@@ -6653,12 +6758,12 @@
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-92rq9hh4bo.gz",
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-udu3v1xbm4.gz",
       "SourceId": "ImportadorNotasApp",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "/",
-      "RelativePath": "_framework/ImportadorNotasApp#[.{fingerprint=92rq9hh4bo}]!.wasm.gz",
+      "RelativePath": "_framework/ImportadorNotasApp#[.{fingerprint=udu3v1xbm4}]!.wasm.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -6667,8 +6772,8 @@
       "RelatedAsset": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "eyvoyat0et",
-      "Integrity": "Oq7Fw7BNJGjj8udE00l3qDyoanPb+4pp6FycoPwiKag=",
+      "Fingerprint": "8oeqzs0nxy",
+      "Integrity": "yH9+TDpjURxuhrE212zekwksk/mh9JS3hCnC2yGKHfI=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.wasm"
@@ -6966,6 +7071,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.Text.Encoding.Extensions.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\gxciyuyn47-19whzah939.gz",
+      "SourceId": "ImportadorNotasApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Http#[.{fingerprint=19whzah939}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Http.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "7faor4zi1r",
+      "Integrity": "w4Xc+//eSEAUi915JlGyeOrRnPORhAHwnqrlSrJivJc=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Http.wasm"
     },
     {
       "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\gyzxd31zc6-ufw2sisn5i.gz",
@@ -7638,6 +7764,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\System.ValueTuple.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\m7khw0bcvn-4e28mmhchr.gz",
+      "SourceId": "ImportadorNotasApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Diagnostics#[.{fingerprint=4e28mmhchr}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "uexoo2em1w",
+      "Integrity": "Jn9LxU1YACgbOnh+McL4BvdzSLLyKpklC4vfH8rcRrI=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.wasm"
     },
     {
       "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\mb29zsmmle-cw7lxxyoji.gz",
@@ -8667,6 +8814,27 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\netstandard.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\tfukz378pv-mdr4398mwf.gz",
+      "SourceId": "ImportadorNotasApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Diagnostics.Abstractions#[.{fingerprint=mdr4398mwf}]!.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.Abstractions.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "ait29emht0",
+      "Integrity": "4kJIxmfJQjpP+L4uqp9yVeKEB4skwJzIPgw8QN4EZ0w=",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.Abstractions.wasm"
     },
     {
       "Identity": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\tj81ri9z7k-xk44tjts63.gz",
@@ -10697,7 +10865,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "39232"
+          "Value": "40166"
         },
         {
           "Name": "Content-Type",
@@ -10705,11 +10873,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wxlaeZIppulDCEwv6eqzasBzb1d1/5YzC+Qh1xQK8gY=\""
+          "Value": "\"b9BNW5Cj7yFLApPmfe0CfVKUbNRhy0lnkPMf0Sz5v6E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10719,18 +10887,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wxlaeZIppulDCEwv6eqzasBzb1d1/5YzC+Qh1xQK8gY="
+          "Value": "sha256-b9BNW5Cj7yFLApPmfe0CfVKUbNRhy0lnkPMf0Sz5v6E="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\9uhxsvbs1m-jgfivnw7sz.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\9uhxsvbs1m-jnic3llh22.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000080860354"
+          "Quality": "0.000079371379"
         }
       ],
       "ResponseHeaders": [
@@ -10740,15 +10908,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12366"
+          "Value": "12598"
         },
         {
           "Name": "ETag",
-          "Value": "\"foJPWyIoYwIDPfsRxSwn7krgOM7imIJmZXFuJedTMBo=\""
+          "Value": "\"c7+Tw+xvBixK74bqirv58T0BL1xm43w4zQhU/vVS4M8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 15:20:02 GMT"
+          "Value": "Sun, 24 Aug 2025 02:04:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10768,19 +10936,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"wxlaeZIppulDCEwv6eqzasBzb1d1/5YzC+Qh1xQK8gY=\""
+          "Value": "W/\"b9BNW5Cj7yFLApPmfe0CfVKUbNRhy0lnkPMf0Sz5v6E=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wxlaeZIppulDCEwv6eqzasBzb1d1/5YzC+Qh1xQK8gY="
+          "Value": "sha256-b9BNW5Cj7yFLApPmfe0CfVKUbNRhy0lnkPMf0Sz5v6E="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\9uhxsvbs1m-jgfivnw7sz.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\9uhxsvbs1m-jnic3llh22.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10789,7 +10957,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "12366"
+          "Value": "12598"
         },
         {
           "Name": "Content-Type",
@@ -10797,11 +10965,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"foJPWyIoYwIDPfsRxSwn7krgOM7imIJmZXFuJedTMBo=\""
+          "Value": "\"c7+Tw+xvBixK74bqirv58T0BL1xm43w4zQhU/vVS4M8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 15:20:02 GMT"
+          "Value": "Sun, 24 Aug 2025 02:04:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10819,7 +10987,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-foJPWyIoYwIDPfsRxSwn7krgOM7imIJmZXFuJedTMBo="
+          "Value": "sha256-c7+Tw+xvBixK74bqirv58T0BL1xm43w4zQhU/vVS4M8="
         }
       ]
     },
@@ -13643,7 +13811,144 @@
       ]
     },
     {
-      "Route": "_framework/ImportadorNotasApp.92rq9hh4bo.wasm",
+      "Route": "_framework/ImportadorNotasApp.pdb",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22368"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:05:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/ImportadorNotasApp.pdb",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-wut4xp2zy9.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000064077919"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15605"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"stptG0OxwiCwpat+alNbKyaf4r6/pru3IRAhKK3N0yY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/ImportadorNotasApp.pdb.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-wut4xp2zy9.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"stptG0OxwiCwpat+alNbKyaf4r6/pru3IRAhKK3N0yY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-stptG0OxwiCwpat+alNbKyaf4r6/pru3IRAhKK3N0yY="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/ImportadorNotasApp.udu3v1xbm4.wasm",
       "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.wasm",
       "Selectors": [],
       "ResponseHeaders": [
@@ -13653,7 +13958,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "20245"
+          "Value": "22293"
         },
         {
           "Name": "Content-Type",
@@ -13661,11 +13966,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo=\""
+          "Value": "\"kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:13 GMT"
+          "Value": "Sun, 24 Aug 2025 02:05:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13675,7 +13980,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "92rq9hh4bo"
+          "Value": "udu3v1xbm4"
         },
         {
           "Name": "label",
@@ -13683,18 +13988,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo="
+          "Value": "sha256-kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA="
         }
       ]
     },
     {
-      "Route": "_framework/ImportadorNotasApp.92rq9hh4bo.wasm",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-92rq9hh4bo.gz",
+      "Route": "_framework/ImportadorNotasApp.udu3v1xbm4.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-udu3v1xbm4.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000123685838"
+          "Quality": "0.000110705192"
         }
       ],
       "ResponseHeaders": [
@@ -13704,15 +14009,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8084"
+          "Value": "9032"
         },
         {
           "Name": "ETag",
-          "Value": "\"Oq7Fw7BNJGjj8udE00l3qDyoanPb+4pp6FycoPwiKag=\""
+          "Value": "\"yH9+TDpjURxuhrE212zekwksk/mh9JS3hCnC2yGKHfI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13732,13 +14037,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo=\""
+          "Value": "W/\"kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "92rq9hh4bo"
+          "Value": "udu3v1xbm4"
         },
         {
           "Name": "label",
@@ -13746,13 +14051,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo="
+          "Value": "sha256-kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA="
         }
       ]
     },
     {
-      "Route": "_framework/ImportadorNotasApp.92rq9hh4bo.wasm.gz",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-92rq9hh4bo.gz",
+      "Route": "_framework/ImportadorNotasApp.udu3v1xbm4.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-udu3v1xbm4.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -13761,7 +14066,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8084"
+          "Value": "9032"
         },
         {
           "Name": "Content-Type",
@@ -13769,11 +14074,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Oq7Fw7BNJGjj8udE00l3qDyoanPb+4pp6FycoPwiKag=\""
+          "Value": "\"yH9+TDpjURxuhrE212zekwksk/mh9JS3hCnC2yGKHfI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -13791,7 +14096,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "92rq9hh4bo"
+          "Value": "udu3v1xbm4"
         },
         {
           "Name": "label",
@@ -13799,305 +14104,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Oq7Fw7BNJGjj8udE00l3qDyoanPb+4pp6FycoPwiKag="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/ImportadorNotasApp.lznx5k1q21.pdb",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22784"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:13 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "lznx5k1q21"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/ImportadorNotasApp.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/ImportadorNotasApp.lznx5k1q21.pdb",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-lznx5k1q21.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000061289532"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16315"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aQNltkM0FEy5zLo1yI26MzZ847oiDpUGYiSZobqJjhQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "lznx5k1q21"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/ImportadorNotasApp.pdb"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/ImportadorNotasApp.lznx5k1q21.pdb.gz",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-lznx5k1q21.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16315"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aQNltkM0FEy5zLo1yI26MzZ847oiDpUGYiSZobqJjhQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "lznx5k1q21"
-        },
-        {
-          "Name": "label",
-          "Value": "_framework/ImportadorNotasApp.pdb.gz"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-aQNltkM0FEy5zLo1yI26MzZ847oiDpUGYiSZobqJjhQ="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/ImportadorNotasApp.pdb",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.pdb",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "22784"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:13 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/ImportadorNotasApp.pdb",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-lznx5k1q21.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000061289532"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16315"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aQNltkM0FEy5zLo1yI26MzZ847oiDpUGYiSZobqJjhQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w=\""
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-sXy0xwvif4B/piAGAtnTltcXJHARz2UoT0imoiUpT2w="
-        }
-      ]
-    },
-    {
-      "Route": "_framework/ImportadorNotasApp.pdb.gz",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-lznx5k1q21.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "16315"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"aQNltkM0FEy5zLo1yI26MzZ847oiDpUGYiSZobqJjhQ=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-aQNltkM0FEy5zLo1yI26MzZ847oiDpUGYiSZobqJjhQ="
+          "Value": "sha256-yH9+TDpjURxuhrE212zekwksk/mh9JS3hCnC2yGKHfI="
         }
       ]
     },
@@ -14112,7 +14119,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "20245"
+          "Value": "22293"
         },
         {
           "Name": "Content-Type",
@@ -14120,11 +14127,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo=\""
+          "Value": "\"kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:13 GMT"
+          "Value": "Sun, 24 Aug 2025 02:05:33 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14134,18 +14141,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo="
+          "Value": "sha256-kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA="
         }
       ]
     },
     {
       "Route": "_framework/ImportadorNotasApp.wasm",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-92rq9hh4bo.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-udu3v1xbm4.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000123685838"
+          "Quality": "0.000110705192"
         }
       ],
       "ResponseHeaders": [
@@ -14155,15 +14162,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8084"
+          "Value": "9032"
         },
         {
           "Name": "ETag",
-          "Value": "\"Oq7Fw7BNJGjj8udE00l3qDyoanPb+4pp6FycoPwiKag=\""
+          "Value": "\"yH9+TDpjURxuhrE212zekwksk/mh9JS3hCnC2yGKHfI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14183,19 +14190,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo=\""
+          "Value": "W/\"kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-f1dNnkRrgwilTZO+ZXe2/zVMUYm1KfYF1lDfA+kPAVo="
+          "Value": "sha256-kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA="
         }
       ]
     },
     {
       "Route": "_framework/ImportadorNotasApp.wasm.gz",
-      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-92rq9hh4bo.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\f2nizrmeeb-udu3v1xbm4.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -14204,7 +14211,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8084"
+          "Value": "9032"
         },
         {
           "Name": "Content-Type",
@@ -14212,11 +14219,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Oq7Fw7BNJGjj8udE00l3qDyoanPb+4pp6FycoPwiKag=\""
+          "Value": "\"yH9+TDpjURxuhrE212zekwksk/mh9JS3hCnC2yGKHfI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 22 Aug 2025 21:57:14 GMT"
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -14234,7 +14241,168 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Oq7Fw7BNJGjj8udE00l3qDyoanPb+4pp6FycoPwiKag="
+          "Value": "sha256-yH9+TDpjURxuhrE212zekwksk/mh9JS3hCnC2yGKHfI="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/ImportadorNotasApp.wut4xp2zy9.pdb",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\ImportadorNotasApp.pdb",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22368"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:05:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wut4xp2zy9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/ImportadorNotasApp.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/ImportadorNotasApp.wut4xp2zy9.pdb",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-wut4xp2zy9.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000064077919"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15605"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"stptG0OxwiCwpat+alNbKyaf4r6/pru3IRAhKK3N0yY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wut4xp2zy9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/ImportadorNotasApp.pdb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/ImportadorNotasApp.wut4xp2zy9.pdb.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\b8vibdvxag-wut4xp2zy9.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"stptG0OxwiCwpat+alNbKyaf4r6/pru3IRAhKK3N0yY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:05:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wut4xp2zy9"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/ImportadorNotasApp.pdb.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-stptG0OxwiCwpat+alNbKyaf4r6/pru3IRAhKK3N0yY="
         }
       ]
     },
@@ -18411,6 +18579,602 @@
       ]
     },
     {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.4e28mmhchr.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26389"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4e28mmhchr"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Diagnostics.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.4e28mmhchr.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\m7khw0bcvn-4e28mmhchr.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000081070126"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12334"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jn9LxU1YACgbOnh+McL4BvdzSLLyKpklC4vfH8rcRrI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4e28mmhchr"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Diagnostics.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.4e28mmhchr.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\m7khw0bcvn-4e28mmhchr.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12334"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jn9LxU1YACgbOnh+McL4BvdzSLLyKpklC4vfH8rcRrI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4e28mmhchr"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Diagnostics.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jn9LxU1YACgbOnh+McL4BvdzSLLyKpklC4vfH8rcRrI="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.mdr4398mwf.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.Abstractions.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mdr4398mwf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.mdr4398mwf.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\tfukz378pv-mdr4398mwf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000114012085"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8770"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4kJIxmfJQjpP+L4uqp9yVeKEB4skwJzIPgw8QN4EZ0w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mdr4398mwf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.mdr4398mwf.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\tfukz378pv-mdr4398mwf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8770"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4kJIxmfJQjpP+L4uqp9yVeKEB4skwJzIPgw8QN4EZ0w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mdr4398mwf"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4kJIxmfJQjpP+L4uqp9yVeKEB4skwJzIPgw8QN4EZ0w="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.Abstractions.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\tfukz378pv-mdr4398mwf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000114012085"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8770"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4kJIxmfJQjpP+L4uqp9yVeKEB4skwJzIPgw8QN4EZ0w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZvWhi/8GakaMIepq3seMueSO7FueT6jwwWGlhmpdTxA="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.Abstractions.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\tfukz378pv-mdr4398mwf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8770"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4kJIxmfJQjpP+L4uqp9yVeKEB4skwJzIPgw8QN4EZ0w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4kJIxmfJQjpP+L4uqp9yVeKEB4skwJzIPgw8QN4EZ0w="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Diagnostics.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26389"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\m7khw0bcvn-4e28mmhchr.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000081070126"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12334"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jn9LxU1YACgbOnh+McL4BvdzSLLyKpklC4vfH8rcRrI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5EMkwnYuvQnQE5Ip/R/w1es7yBkVWIU1omfSovoLFNQ="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Diagnostics.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\m7khw0bcvn-4e28mmhchr.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12334"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jn9LxU1YACgbOnh+McL4BvdzSLLyKpklC4vfH8rcRrI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jn9LxU1YACgbOnh+McL4BvdzSLLyKpklC4vfH8rcRrI="
+        }
+      ]
+    },
+    {
       "Route": "_framework/Microsoft.Extensions.FileProviders.Abstractions.4ewk3ipqll.wasm",
       "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.FileProviders.Abstractions.wasm",
       "Selectors": [],
@@ -19305,6 +20069,304 @@
       ]
     },
     {
+      "Route": "_framework/Microsoft.Extensions.Http.19whzah939.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Http.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "82197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "19whzah939"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Http.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Http.19whzah939.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\gxciyuyn47-19whzah939.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000029724749"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33641"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4Xc+//eSEAUi915JlGyeOrRnPORhAHwnqrlSrJivJc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "19whzah939"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Http.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Http.19whzah939.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\gxciyuyn47-19whzah939.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33641"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4Xc+//eSEAUi915JlGyeOrRnPORhAHwnqrlSrJivJc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "19whzah939"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Http.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-w4Xc+//eSEAUi915JlGyeOrRnPORhAHwnqrlSrJivJc="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Http.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Http.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "82197"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Http.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\gxciyuyn47-19whzah939.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000029724749"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33641"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4Xc+//eSEAUi915JlGyeOrRnPORhAHwnqrlSrJivJc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hXiPpWPveO5qsdEW2Gv44+2FTo1+h44csvRy7ob7mSM="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Http.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\gxciyuyn47-19whzah939.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "33641"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4Xc+//eSEAUi915JlGyeOrRnPORhAHwnqrlSrJivJc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-w4Xc+//eSEAUi915JlGyeOrRnPORhAHwnqrlSrJivJc="
+        }
+      ]
+    },
+    {
       "Route": "_framework/Microsoft.Extensions.Logging.Abstractions.w8ltos2ii6.wasm",
       "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.wasm",
       "Selectors": [],
@@ -19897,6 +20959,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-I2BTFgqmlupUZPO2jTtA5GwISAsb5ClObiLGRh14Tjk="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.cy00pk0ov5.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.ConfigurationExtensions.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12053"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cy00pk0ov5"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.cy00pk0ov5.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\a18dxfohzp-cy00pk0ov5.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000183722212"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5442"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ESyFQpjtOvg7UGOFKxvonwt+W1aBe4ADAjNHXRT8+4U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cy00pk0ov5"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.wasm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.cy00pk0ov5.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\a18dxfohzp-cy00pk0ov5.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ESyFQpjtOvg7UGOFKxvonwt+W1aBe4ADAjNHXRT8+4U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cy00pk0ov5"
+        },
+        {
+          "Name": "label",
+          "Value": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.wasm.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ESyFQpjtOvg7UGOFKxvonwt+W1aBe4ADAjNHXRT8+4U="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\bin\\Debug\\net9.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.ConfigurationExtensions.wasm",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12053"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.wasm",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\a18dxfohzp-cy00pk0ov5.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000183722212"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5442"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ESyFQpjtOvg7UGOFKxvonwt+W1aBe4ADAjNHXRT8+4U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LHJxyJTXngS15YKxbxoWeE9c1ppPN5KbksH4t69pycs="
+        }
+      ]
+    },
+    {
+      "Route": "_framework/Microsoft.Extensions.Options.ConfigurationExtensions.wasm.gz",
+      "AssetFile": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\obj\\Debug\\net9.0\\compressed\\a18dxfohzp-cy00pk0ov5.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5442"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/wasm"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ESyFQpjtOvg7UGOFKxvonwt+W1aBe4ADAjNHXRT8+4U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 24 Aug 2025 02:03:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ESyFQpjtOvg7UGOFKxvonwt+W1aBe4ADAjNHXRT8+4U="
         }
       ]
     },

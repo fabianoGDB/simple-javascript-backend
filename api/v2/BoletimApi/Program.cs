@@ -11,7 +11,7 @@ var app = builder.Build();
 
 app.UseCors();
 
-app.MapPost("/imports", async ([FromForm] IFormFile file, ILocalStorageService service) =>
+app.MapPost("/api/imports", async ([FromForm] IFormFile file, ILocalStorageService service) =>
 {
     var fileSavedPath = await service.SaveFile(file);
     return fileSavedPath;
