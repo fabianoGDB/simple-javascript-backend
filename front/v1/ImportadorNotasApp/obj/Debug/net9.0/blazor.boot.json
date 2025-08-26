@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ImportadorNotasApp",
   "resources": {
-    "hash": "sha256-X10E+jzNvQIJu+Prwmi3V6J/F10xsDH7YIRCC0CgZ2g=",
+    "hash": "sha256-4GnINuy/LKTNfRw3z9a4TExw7bcfDFvEgqIDhX+HDxA=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.qe23mgxr71.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.flveird317.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -29,6 +29,7 @@
       "Microsoft.Extensions.Primitives.3sx0y6ui4u.wasm": "Microsoft.Extensions.Primitives.wasm",
       "Microsoft.JSInterop.sk08br83jz.wasm": "Microsoft.JSInterop.wasm",
       "Microsoft.JSInterop.WebAssembly.fkdz83fr0b.wasm": "Microsoft.JSInterop.WebAssembly.wasm",
+      "NetcodeHub.Packages.Components.Toast.v5fjgb39bq.wasm": "NetcodeHub.Packages.Components.Toast.wasm",
       "Microsoft.CSharp.mnvthyn9ga.wasm": "Microsoft.CSharp.wasm",
       "Microsoft.VisualBasic.Core.g11rmyyh65.wasm": "Microsoft.VisualBasic.Core.wasm",
       "Microsoft.VisualBasic.txibwr0y0j.wasm": "Microsoft.VisualBasic.wasm",
@@ -205,8 +206,8 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "ImportadorNotasApp.udu3v1xbm4.wasm": "ImportadorNotasApp.wasm",
-      "ImportadorNotasApp.wut4xp2zy9.pdb": "ImportadorNotasApp.pdb"
+      "ImportadorNotasApp.48xosvdqnm.wasm": "ImportadorNotasApp.wasm",
+      "ImportadorNotasApp.vmhkw4tta6.pdb": "ImportadorNotasApp.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.hmanx9razn.js": "sha256-d7UNSArplVrX3arY2Kmhxp1wN79ng8hLqIBrkiQ9Gbo="
@@ -253,6 +254,7 @@
       "Microsoft.Extensions.Primitives.3sx0y6ui4u.wasm": "sha256-A0WIty9B3GNUBtsykg0eb3kD47r0/Cpfk8q1Ei8ECrc=",
       "Microsoft.JSInterop.sk08br83jz.wasm": "sha256-FNS+xvA0GFiM2CVWHljv47AO+crkl0V7XiidkkMbVSw=",
       "Microsoft.JSInterop.WebAssembly.fkdz83fr0b.wasm": "sha256-kSwbIGuYmzrEilFXnLY8mKBXXFQtVXKAF/Qa323+Fnk=",
+      "NetcodeHub.Packages.Components.Toast.v5fjgb39bq.wasm": "sha256-g18NljuCws9svbugP8QdwfVfNfqKoRRSuHPyNn/xl8s=",
       "Microsoft.CSharp.mnvthyn9ga.wasm": "sha256-fpFq3tiKl2KyIwwxqx00V0KgBM6xAe3+4MacTs9d0c0=",
       "Microsoft.VisualBasic.Core.g11rmyyh65.wasm": "sha256-BDwtMGszyqpVVjJQLJlpzwUZYXvG7ReKXIkB6OiAxVU=",
       "Microsoft.VisualBasic.txibwr0y0j.wasm": "sha256-X9/DgjYY/yytG8fIqL2MB7tBD3j/fo5VFEUVNS0k55Q=",
@@ -420,10 +422,10 @@
       "WindowsBase.377bly7twj.wasm": "sha256-0VmBdMjdc0nZGHDSfaGirT6y3mJTM0qx8eqCUC/rpiE=",
       "mscorlib.o0184ey5ia.wasm": "sha256-2GxNKZQJVJvYMUxSTuXa5V2qxawSMMHZtwG33SKVCZU=",
       "netstandard.hb3h2rr8mk.wasm": "sha256-DWn9+RH/ElZQ6imlYqVwZvir1KTzNwY18AzGmnyiymU=",
-      "ImportadorNotasApp.udu3v1xbm4.wasm": "sha256-kq97KWxkxIIKNAPIIEEOzqobbq0DY0YttZHxid/A2MA="
+      "ImportadorNotasApp.48xosvdqnm.wasm": "sha256-NIZOEofoj0oIegdSsR6SD/6fnTuGaipiqqVggy3aWxo="
     },
     "pdb": {
-      "ImportadorNotasApp.wut4xp2zy9.pdb": "sha256-KBVyaVTlqNUYNgS51VMmolPgRv13Dmx72ymWfxOU9TM="
+      "ImportadorNotasApp.vmhkw4tta6.pdb": "sha256-uanegvlRje7iFU2Suc63pdmCDwN75B3jQZWq7VyDJ3I="
     }
   },
   "cacheBootResources": true,

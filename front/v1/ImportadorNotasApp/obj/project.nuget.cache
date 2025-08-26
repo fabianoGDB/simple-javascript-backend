@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NX04abekdXI=",
+  "dgSpecHash": "HC5f3ydt3G0=",
   "success": true,
   "projectFilePath": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\ImportadorNotasApp.csproj",
   "expectedPackageFiles": [
@@ -34,7 +34,7 @@
     "C:\\Users\\docto\\.nuget\\packages\\microsoft.jsinterop.webassembly\\9.0.0\\microsoft.jsinterop.webassembly.9.0.0.nupkg.sha512",
     "C:\\Users\\docto\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.0\\microsoft.net.illink.tasks.9.0.0.nupkg.sha512",
     "C:\\Users\\docto\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.0\\microsoft.net.sdk.webassembly.pack.9.0.0.nupkg.sha512",
-    "C:\\Users\\docto\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\9.0.0\\microsoft.netcore.app.runtime.mono.browser-wasm.9.0.0.nupkg.sha512"
+    "C:\\Users\\docto\\.nuget\\packages\\netcodehub.packages.components.toast\\1.0.5\\netcodehub.packages.components.toast.1.0.5.nupkg.sha512"
   ],
   "logs": []
 }

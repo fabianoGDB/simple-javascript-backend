@@ -1,47 +1,67 @@
 ﻿@page "/"
-
 <PageTitle>Importar Planilhas</PageTitle>
 
 @using System.IO
 @using Services
 @using Microsoft.AspNetCore.Components.Forms
+@using NetcodeHub.Packages.Components.Toast
 @inject FileService fileService
 
 
+
+
+
 <div class="page-wrapper">
+
+    <NetcodeHubToast @ref="Toast"
+    Position="@ToastPosition.Top()"
+    IconClass="bi bi-check"
+    Persist="true"
+    Duration=4000 />
     <div class="card">
         <form @onsubmit="OnSubmit">
             <div class="icon">📄</div>
             <h2>Sistema de Notas</h2>
             <p>Importe sua planilha de notas para visualizar os dados dos alunos</p>
-            <InputFile OnChange="OnInputFileChange" accept=".xlsx" class="file-input" />
-            <p class="formats">Formatos suportados: .xlsx, .xls, .csv</p>
-            <button class="btn" type="submit"> Importar Planilha</button>
+
+            <div class="upload-wrapper">
+                <label for="upload" class="upload-label">
+                    <span>📤 Importar</span>
+                </label>
+                <InputFile id="upload" class="input-hidden" OnChange="OnInputFileChange" />
+            </div>
+
+
+            <p class="formats">Formatos suportados: .xlsx</p>
+            <button class="btn" type="submit">Importar Planilha</button>
         </form>
     </div>
 </div>
 
 @code {
-    string Message = "Importe sua planilha de notas para visualizar os dados dos alunos";
+    NetcodeHubToast? Toast;
+    List<string> RequiredEx = [".xlsx"];
     IBrowserFile? selectedFile;
 
     void OnInputFileChange(InputFileChangeEventArgs e)
     {
         selectedFile = e.File;
-        Message = $"Arquivo selecionado: {selectedFile.Name} ({selectedFile.Size / 1024} KB)";
-        StateHasChanged();
     }
 
-    async Task OnSubmit(){
+    async Task OnSubmit()
+    {
         if (selectedFile is null){
+            await Toast.ShowDangerToast("Importação", $"Planilha não selecionada!");
             return;
         }
+
         var response = await fileService.UploadFile(selectedFile);
-        StateHasChanged();
+        await Toast.ShowInfoToast("Importação", $"Processo iniciado aguarde um momento!");
     }
 }
 
-<style>
+
+    <style>
     .page-wrapper {
         height: 100vh;
         display: flex;
@@ -58,12 +78,7 @@
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
         max-width: 400px;
         width: 90%;
-        transition: all 0.3s ease;
     }
-
-        .card:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
 
     .icon {
         font-size: 40px;
@@ -88,6 +103,22 @@
         color: #555;
     }
 
+    .formats {
+        font-size: 12px;
+        color: #777;
+        margin-top: 10px;
+    }
+
+    .file-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+
     .btn {
         margin-top: 20px;
         background-color: #1a57ff;
@@ -97,24 +128,43 @@
         border-radius: 6px;
         font-size: 16px;
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
         transition: background-color 0.3s ease;
+        width: 100%;
     }
 
         .btn:hover {
             background-color: #004de0;
         }
 
-    .formats {
-        font-size: 12px;
-        color: #777;
-        margin-top: 10px;
+    .upload-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
     }
 
-    /* .file-input { */
-    /*     display: none; */
-    /* } */
-</style>
+    .upload-label {
+        background-color: #1a57ff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .input-hidden {
+        display: none;
+    }
+
+    .file-name {
+        color: #333;
+        font-size: 14px;
+        max-width: 200px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+
+    </style>

@@ -520,6 +520,24 @@
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
         }
+      },
+      "NetcodeHub.Packages.Components.Toast/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/NetcodeHub.Packages.Components.Toast.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/NetcodeHub.Packages.Components.Toast.dll": {}
+        },
+        "build": {
+          "buildTransitive/NetcodeHub.Packages.Components.Toast.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/NetcodeHub.Packages.Components.Toast.props": {}
+        }
       }
     },
     "net9.0/browser-wasm": {
@@ -1040,6 +1058,24 @@
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
+        }
+      },
+      "NetcodeHub.Packages.Components.Toast/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/NetcodeHub.Packages.Components.Toast.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/NetcodeHub.Packages.Components.Toast.dll": {}
+        },
+        "build": {
+          "buildTransitive/NetcodeHub.Packages.Components.Toast.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/NetcodeHub.Packages.Components.Toast.props": {}
         }
       }
     }
@@ -2032,6 +2068,25 @@
         "tools/net9.0/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
         "tools/net9.0/Microsoft.NET.WebAssembly.Webcil.dll"
       ]
+    },
+    "NetcodeHub.Packages.Components.Toast/1.0.5": {
+      "sha512": "zo+WJHNgACz2ZWdn6NLiU9tqkHnRPdYQ3wMd4+jVox/omt/sYfGlrfPhtdrDHGBpfX4q7j02Ej1iVx8j5KT2Zw==",
+      "type": "package",
+      "path": "netcodehub.packages.components.toast/1.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/NetcodeHub.Packages.Components.Toast.props",
+        "buildMultiTargeting/NetcodeHub.Packages.Components.Toast.props",
+        "buildTransitive/NetcodeHub.Packages.Components.Toast.props",
+        "lib/net8.0/NetcodeHub.Packages.Components.Toast.dll",
+        "netcode-hub.png",
+        "netcodehub.packages.components.toast.1.0.5.nupkg.sha512",
+        "netcodehub.packages.components.toast.nuspec",
+        "staticwebassets/NetcodeHub.Packages.Components.Toast.bundle.scp.css"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -2040,7 +2095,8 @@
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 9.0.0",
       "Microsoft.Extensions.Http >= 9.0.0",
       "Microsoft.NET.ILLink.Tasks >= 9.0.0",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.0"
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.0",
+      "NetcodeHub.Packages.Components.Toast >= 1.0.5"
     ]
   },
   "packageFolders": {
@@ -2069,6 +2125,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2117,6 +2174,10 @@
             "target": "Package",
             "version": "[9.0.0, )",
             "autoReferenced": true
+          },
+          "NetcodeHub.Packages.Components.Toast": {
+            "target": "Package",
+            "version": "[1.0.5, )"
           }
         },
         "imports": [
@@ -2130,12 +2191,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[9.0.0, 9.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

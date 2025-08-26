@@ -1,0 +1,75 @@
+# Build results
+bin/
+obj/
+Generated/
+GeneratedFiles/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Package and restore results
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+
+# Visual Studio cache
+.vs/
+_ReSharper*/
+*.DotSettings.user
+
+# dotCover
+.idea/.dotCover
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Publish
+publish/
+wwwroot/dist/
+app.publish/
+
+# Blazor specific
+wwwroot/css/app.css.map
+wwwroot/_framework/
+
+# Secrets
+secrets.json
+
+# Node modules (if used)
+node_modules/
+npm-debug.log
+
+# Environment files
+.env
+.env.*
+
+# SQLite / Local DB
+*.db
+*.sqlite
+
+# JetBrains Rider and ReSharper caches
+.idea/
+*.sln.iml
+
+# Custom ignore
+**/TestResults/
+**/coverage/

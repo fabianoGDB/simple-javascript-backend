@@ -1,0 +1,136 @@
+﻿@page "/planilhas"
+@using ImportadorNotasApp.DTOs
+@using ImportadorNotasApp.Enums
+@using ImportadorNotasApp.Services
+@inject ImportsService ImportsService
+
+
+@if (isLoading)
+{
+    <p>Carregando...</p>
+}
+else if (spreadsheets is not null && spreadsheets.Any())
+{
+    <div class="page-wrapper">
+        <h2 class="page-title">Planilhas Importadas</h2>
+
+        <div class="grid">
+            @foreach (var spreadsheet in spreadsheets)
+            {
+                <div class="card">
+                    <div class="icon">📄</div>
+                    <div class="title">@spreadsheet.ClassName - @spreadsheet.Year</div>
+                    <div class="info">Importado em: @spreadsheet.ImportedAt.ToString("dd/MM/yyyy")</div>
+                    <div class="student-info">@spreadsheet.StudentCount alunos</div>
+                    <div class="status @GetStatusClass(spreadsheet.Status)">
+                        @((SpreadsheetsStatus)spreadsheet.Status)
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <p>Nenhuma planilha importada encontrada.</p>
+}
+
+@code {
+    private List<ImportedSpreadsheetDto>? spreadsheets;
+    private bool isLoading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+
+        try
+        {
+            spreadsheets = await ImportsService.GetImports();
+        }
+        catch (Exception ex)
+        {
+            // Você pode usar Toast de erro aqui também
+            Console.Error.WriteLine(ex.Message);
+        }
+        finally
+        {
+            isLoading = false;
+        }
+
+        
+    }
+
+    private string GetStatusClass(int status)
+    {
+        return status switch
+        {
+            0 => "processando",
+            1 => "finalizado",
+            2 => "erro",
+            _ => ""
+        };
+    }
+}
+
+
+
+<style>
+    h2 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .icon {
+        font-size: 2rem;
+        color: #6366f1;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #1f2937;
+        margin-top: 0.5rem;
+    }
+
+    .info {
+        color: #6b7280;
+        font-size: 0.9rem;
+    }
+
+    .status {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+        .status.finalizado {
+            color: #10b981;
+        }
+
+        .status.processando {
+            color: #0ea5e9;
+        }
+
+        .status.erro {
+            color: #ef4444;
+        }
+
+</style>

@@ -1,3 +1,4 @@
+using BoletimApi.Enums;
 using BoletimApi.Models;
 using BoletimApi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -11,18 +12,30 @@ var app = builder.Build();
 
 app.UseCors();
 
+app.MapGet("/api", () =>
+{
+    return Results.Ok("Online");
+});
+
 app.MapPost("/api/imports", async ([FromForm] IFormFile file, ILocalStorageService service) =>
 {
     var fileSavedPath = await service.SaveFile(file);
     return fileSavedPath;
 })
 .Accepts<IFormFile>("multipart/form-data")
+.DisableAntiforgery()
 .WithName("UploadPlanilha");
 
-
-app.MapGet("/api", () =>
+app.MapGet("/api/imports", () =>
 {
-    return Results.Ok("Online");
+    var imports = new List<ImportedSpreadsheetDto>
+    {
+        new(1, "Informatica 1", 2021, DateTime.Now.AddDays(-3), (int)SpreadsheetsStatus.Finalizado, 30),
+        new(2, "Engenharia Civil 2", 2021,  DateTime.Now.AddDays(-2), (int)SpreadsheetsStatus.Processando),
+        new(3, "Informatica 2", 2021, DateTime.Now.AddDays(-1), (int)SpreadsheetsStatus.Processando)
+    };
+
+    return Results.Ok(imports);
 });
 
 app.MapGet("/api/imports/{id}/students", ([FromRoute] int id) =>
