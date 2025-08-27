@@ -1,0 +1,240 @@
+﻿@page "/conselho"
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0d1117;
+        margin: 20px;
+        color: #e6edf3;
+    }
+
+    .container {
+        max-width: 1300px;
+        margin: auto;
+        background: #161b22;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    button {
+        background-color: #21262d;
+        border: 1px solid #30363d;
+        color: #c9d1d9;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        text-align: left;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 16px;
+    }
+
+    th,
+    td {
+        border: 1px solid #30363d;
+        padding: 6px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    th {
+        background-color: #21262d;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .section {
+        margin-top: 20px;
+    }
+
+    .foto-aluno {
+        width: 110px;
+        height: 140px;
+        border: 2px solid #30363d;
+        object-fit: cover;
+    }
+
+    .grade-green {
+        background-color: #033a16;
+        color: #a7f3d0;
+    }
+
+    .grade-blue {
+        background-color: #1e3a8a;
+        color: #bfdbfe;
+    }
+
+    .grade-yellow {
+        background-color: #7c2d12;
+        color: #fde68a;
+    }
+
+    .grade-red {
+        background-color: #450a0a;
+        color: #fecaca;
+    }
+
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .box {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .title-bar {
+        background-color: #21262d;
+        padding: 6px;
+        font-weight: bold;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .info-box {
+        border: 1px solid #30363d;
+        min-height: 60px;
+        background-color: #0d1117;
+    }
+
+    media (max-width: 768px) {
+        .grid
+
+    {
+        flex-direction: column;
+    }
+
+    }
+</style>
+
+<div class="container">
+    <button @onclick="GoBack">← Voltar para Lista</button>
+    <h2>JOÃO SILVA SANTOS</h2>
+
+    <!-- Tabela principal -->
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Bim</th>
+                <th colspan="3">C. HUMANAS</th>
+                <th colspan="3">Ciências da Natureza</th>
+                <th colspan="5">Linguagens</th>
+                <th>MAT</th>
+                <th colspan="6">D. Técnicas</th>
+            </tr>
+            <tr>
+                <th>FIL</th>
+                <th>IHEG</th>
+                <th>Área</th>
+                <th>IBEQ</th>
+                <th>FIS</th>
+                <th>Área</th>
+                <th>ART</th>
+                <th>EFI</th>
+                <th>ING</th>
+                <th>LPR</th>
+                <th>Área</th>
+                <th>ALPO</th>
+                <th>DWS1</th>
+                <th>GBD1</th>
+                <th>SOP</th>
+                <th>IHD</th>
+                <th>MAAC</th>
+                <th>Área</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1º</td>
+                <td class="grade-yellow">8.5</td>
+                <td class="grade-yellow">7.8</td>
+                <td class="grade-blue">8.15</td>
+                <td class="grade-yellow">7.5</td>
+                <td class="grade-yellow">8.0</td>
+                <td class="grade-yellow">7.75</td>
+                <td class="grade-green">9.0</td>
+                <td class="grade-yellow">8.5</td>
+                <td class="grade-yellow">7.8</td>
+                <td class="grade-yellow">8.2</td>
+                <td class="grade-blue">8.38</td>
+                <td class="grade-yellow">7.5</td>
+                <td>-</td>
+                <td>-</td>
+                <td class="grade-yellow">8.5</td>
+                <td class="grade-yellow">8.5</td>
+                <td class="grade-green">9.0</td>
+                <td class="grade-blue">8.83</td>
+            </tr>
+            <!-- Adicione as outras linhas conforme necessário -->
+        </tbody>
+    </table>
+
+    <!-- Foto + Freq + Situação -->
+    <div class="grid">
+        <div class="box">
+            <img src="https://picsum.photos/200/300" class="foto-aluno" />
+        </div>
+
+        <div class="box">
+            <table>
+                <thead>
+                    <tr><th>Freq (%)</th><th>Bim</th><th>Áreas</th><th>Disciplinas</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td rowspan="6" class="grade-green"><strong>89.23%</strong></td><td>1º</td><td>5</td><td>15</td></tr>
+                    <tr><td>2º</td><td>5</td><td>15</td></tr>
+                    <tr><td>3º</td><td>5</td><td>15</td></tr>
+                    <tr><td>4º</td><td>5</td><td>14</td></tr>
+                    <tr><td>Rec</td><td>-</td><td>-</td></tr>
+                    <tr><td>Ano</td><td>5</td><td>15</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box">
+            <div class="title-bar">Situação</div>
+            <div class="info-box"></div>
+            <div class="title-bar">Áreas em Conselho</div>
+            <div class="info-box"></div>
+        </div>
+    </div>
+
+    <!-- Tabela inferior -->
+    <div class="section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Retif. de Frequência</th>
+                    <th>Resultado</th>
+                    <th>Período a ser Retificado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    private void GoBack()
+    {
+        NavigationManager.NavigateTo("/alunos");
+    }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; }
+}

@@ -9,8 +9,16 @@
       "PackagePath": "staticwebassets\\ImportadorNotasApp.styles.css"
     },
     {
+      "Id": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\wwwroot\\css\\alunos.css",
+      "PackagePath": "staticwebassets\\css\\alunos.css"
+    },
+    {
       "Id": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\wwwroot\\css\\loading_component.css",
+      "PackagePath": "staticwebassets\\css\\loading_component.css"
     },
     {
       "Id": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\wwwroot\\favicon.png",

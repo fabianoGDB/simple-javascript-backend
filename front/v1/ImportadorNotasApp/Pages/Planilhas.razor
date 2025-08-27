@@ -3,36 +3,50 @@
 @using ImportadorNotasApp.Enums
 @using ImportadorNotasApp.Services
 @inject ImportsService ImportsService
+@inject NavigationManager NavigationManager
+
 
 
 @if (isLoading)
 {
-    <p>Carregando...</p>
+    <div class="grid">
+        <div class="card">
+            <div class="lds-dual-ring"></div>
+        </div>
+    </div>
 }
 else if (spreadsheets is not null && spreadsheets.Any())
 {
-    <div class="page-wrapper">
         <h2 class="page-title">Planilhas Importadas</h2>
 
         <div class="grid">
             @foreach (var spreadsheet in spreadsheets)
             {
-                <div class="card">
+            <div class="card"
+                 style="@(spreadsheet.Status == 1 ? "cursor: pointer;" : "cursor: default;")"
+                 @onclick="() => HandleClick(spreadsheet)">
                     <div class="icon">📄</div>
                     <div class="title">@spreadsheet.ClassName - @spreadsheet.Year</div>
                     <div class="info">Importado em: @spreadsheet.ImportedAt.ToString("dd/MM/yyyy")</div>
-                    <div class="student-info">@spreadsheet.StudentCount alunos</div>
-                    <div class="status @GetStatusClass(spreadsheet.Status)">
-                        @((SpreadsheetsStatus)spreadsheet.Status)
+                    <div class="student-info">@spreadsheet.StudentCount aluno(s)</div>
+                    <div class="status @(spreadsheet.Status == 1 ? "processando" :
+                                      spreadsheet.Status == 2 ? "finalizado" :
+                                      spreadsheet.Status == 3 ? "erro" : "")">
+                        @(spreadsheet.Status == 1 ? "Processando" :
+                            spreadsheet.Status == 2 ? "Finalizado" :
+                            spreadsheet.Status == 3 ? "Erro" : "Desconhecido")
                     </div>
                 </div>
             }
         </div>
-    </div>
 }
 else
 {
-    <p>Nenhuma planilha importada encontrada.</p>
+    <div class="grid">
+            <div class="card">
+            <p>Nenhuma planilha encontrada.</p>   
+      </div>
+    </div>
 }
 
 @code {
@@ -60,6 +74,14 @@ else
         
     }
 
+    private void HandleClick(ImportedSpreadsheetDto spreadsheet)
+    {
+        if (spreadsheet.Status == 1)
+        {
+            NavigationManager.NavigateTo($"/alunos?planilhaId={spreadsheet.Id}");
+        }
+    }
+
     private string GetStatusClass(int status)
     {
         return status switch
@@ -70,6 +92,7 @@ else
             _ => ""
         };
     }
+
 }
 
 
@@ -79,6 +102,7 @@ else
         margin-bottom: 1.5rem;
         text-align: center;
         font-weight: bold;
+        color: #f3f4f6;
     }
 
     .grid {
@@ -88,30 +112,36 @@ else
     }
 
     .card {
-        background-color: white;
+        background-color: #1e1e2f;
         border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
         padding: 1.2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        color: #e5e7eb;
+        transition: transform 0.2s ease;
     }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
 
     .icon {
         font-size: 2rem;
-        color: #6366f1;
+        color: #818cf8;
     }
 
     .title {
         font-weight: bold;
         font-size: 1.1rem;
-        color: #1f2937;
+        color: #d1d5db;
         margin-top: 0.5rem;
     }
 
     .info {
-        color: #6b7280;
+        color: #9ca3af;
         font-size: 0.9rem;
     }
 
@@ -121,16 +151,19 @@ else
         margin-top: 10px;
     }
 
+        /* Cores para os status */
+
         .status.finalizado {
-            color: #10b981;
+            color: #10b981; /* Verde */
         }
 
         .status.processando {
-            color: #0ea5e9;
+            color: #0ea5e9; /* Azul */
         }
 
         .status.erro {
-            color: #ef4444;
+            color: #ef4444; /* Vermelho */
         }
+
 
 </style>

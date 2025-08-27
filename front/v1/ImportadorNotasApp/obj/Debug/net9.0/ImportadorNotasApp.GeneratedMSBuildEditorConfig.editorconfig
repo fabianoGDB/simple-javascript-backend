@@ -28,6 +28,14 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/docto/projetos/javascript/simplefront/front/v1/ImportadorNotasApp/Pages/Alunos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWx1bm9zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/docto/projetos/javascript/simplefront/front/v1/ImportadorNotasApp/Pages/Conselho.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc2VsaG8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/docto/projetos/javascript/simplefront/front/v1/ImportadorNotasApp/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
