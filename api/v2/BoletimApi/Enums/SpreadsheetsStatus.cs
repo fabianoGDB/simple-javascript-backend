@@ -2,8 +2,8 @@
 {
     public enum SpreadsheetsStatus
     {
-        Processando,
-        Finalizado,
-        Erro
+        Processando = 1,
+        Finalizado = 2,
+        Erro = 3
     }
 }

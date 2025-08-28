@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ImportadorNotasApp",
   "resources": {
-    "hash": "sha256-fqEXc6GI9vxVFARg0k60XM4tzt/OdrEhngTw6chgRLM=",
+    "hash": "sha256-nsbTd9UoOU4SftgSIq5CD4g2bkG+224gMHO38GkXHw0=",
     "fingerprinting": {
       "Microsoft.AspNetCore.Authorization.qe23mgxr71.wasm": "Microsoft.AspNetCore.Authorization.wasm",
       "Microsoft.AspNetCore.Components.flveird317.wasm": "Microsoft.AspNetCore.Components.wasm",
@@ -206,8 +206,8 @@
       "icudt_CJK.tjcz0u77k5.dat": "icudt_CJK.dat",
       "icudt_EFIGS.tptq2av103.dat": "icudt_EFIGS.dat",
       "icudt_no_CJK.lfu7j35m59.dat": "icudt_no_CJK.dat",
-      "ImportadorNotasApp.9msmkm0gua.wasm": "ImportadorNotasApp.wasm",
-      "ImportadorNotasApp.7fb1z2ge9h.pdb": "ImportadorNotasApp.pdb"
+      "ImportadorNotasApp.uul32rfyan.wasm": "ImportadorNotasApp.wasm",
+      "ImportadorNotasApp.jaiuqfxod3.pdb": "ImportadorNotasApp.pdb"
     },
     "jsModuleNative": {
       "dotnet.native.hmanx9razn.js": "sha256-d7UNSArplVrX3arY2Kmhxp1wN79ng8hLqIBrkiQ9Gbo="
@@ -422,10 +422,10 @@
       "WindowsBase.377bly7twj.wasm": "sha256-0VmBdMjdc0nZGHDSfaGirT6y3mJTM0qx8eqCUC/rpiE=",
       "mscorlib.o0184ey5ia.wasm": "sha256-2GxNKZQJVJvYMUxSTuXa5V2qxawSMMHZtwG33SKVCZU=",
       "netstandard.hb3h2rr8mk.wasm": "sha256-DWn9+RH/ElZQ6imlYqVwZvir1KTzNwY18AzGmnyiymU=",
-      "ImportadorNotasApp.9msmkm0gua.wasm": "sha256-nxnrU+Rvg9CfFNNsLNzaby2HJxJeIR04O+sNNLF5H5E="
+      "ImportadorNotasApp.uul32rfyan.wasm": "sha256-Zo8B7vhMlbgC66JgTRhvuol1Lw0ay988OpxiuQHw8Hs="
     },
     "pdb": {
-      "ImportadorNotasApp.7fb1z2ge9h.pdb": "sha256-7UQDC1ex8dychRc0wTn+prUbRoUBQNsSYlLbhJiWNFw="
+      "ImportadorNotasApp.jaiuqfxod3.pdb": "sha256-5UEAFfcZaMzLOHUeZZMLzUhIQVf78r5cr2cZdZmSSa4="
     }
   },
   "cacheBootResources": true,

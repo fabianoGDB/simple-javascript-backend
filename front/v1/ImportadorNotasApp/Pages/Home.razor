@@ -56,7 +56,11 @@
         }
 
         var response = await fileService.UploadFile(selectedFile);
-        await Toast.ShowInfoToast("Importação", $"Processo iniciado aguarde um momento!");
+        // exibe mensagem conforme status
+        if (response.StatusCode >= 200 && response.StatusCode < 300)
+            await Toast.ShowInfoToast("Importação", response.Message);
+        else
+            await Toast.ShowDangerToast("Importação", response.Message);
     }
 }
 

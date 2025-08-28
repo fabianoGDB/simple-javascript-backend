@@ -3,40 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\pages\\conselho.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\pages\\conselho.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\pages\\planilhas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\pages\\planilhas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\wwwroot\\css\\alunos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\wwwroot\\css\\alunos.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\enums\\spreadsheetsstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\enums\\spreadsheetsstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\pages\\alunos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\pages\\alunos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\pages\\planilhas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\pages\\planilhas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,111 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Conselho.razor",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Conselho.razor",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\Pages\\Conselho.razor",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Conselho.razor",
-              "RelativeToolTip": "ImportadorNotasApp\\Pages\\Conselho.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T09:50:48.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "SpreadsheetsStatus.cs",
               "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Enums\\SpreadsheetsStatus.cs",
               "RelativeDocumentMoniker": "ImportadorNotasApp\\Enums\\SpreadsheetsStatus.cs",
               "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Enums\\SpreadsheetsStatus.cs",
               "RelativeToolTip": "ImportadorNotasApp\\Enums\\SpreadsheetsStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T08:44:49.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\App.razor",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\App.razor",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\App.razor",
-              "RelativeToolTip": "ImportadorNotasApp\\App.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T08:41:24.654Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "alunos.css",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\wwwroot\\css\\alunos.css",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\wwwroot\\css\\alunos.css",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\wwwroot\\css\\alunos.css",
-              "RelativeToolTip": "ImportadorNotasApp\\wwwroot\\css\\alunos.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-26T08:38:59.506Z"
+              "WhenOpened": "2025-08-28T01:03:32.589Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "ImportadorNotasApp\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T05:46:57.585Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "ImportadorNotasApp\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T05:46:56.451Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Alunos.razor",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Alunos.razor",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\Pages\\Alunos.razor",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Alunos.razor",
-              "RelativeToolTip": "ImportadorNotasApp\\Pages\\Alunos.razor",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T05:45:46.534Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Planilhas.razor",
               "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Planilhas.razor",
               "RelativeDocumentMoniker": "ImportadorNotasApp\\Pages\\Planilhas.razor",
               "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Planilhas.razor",
               "RelativeToolTip": "ImportadorNotasApp\\Pages\\Planilhas.razor",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAmwA8AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAcwCYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T05:07:02.015Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Home.razor",
-              "RelativeToolTip": "ImportadorNotasApp\\Pages\\Home.razor",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAowHkAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-26T05:07:00.203Z"
+              "WhenOpened": "2025-08-28T00:46:33.441Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -32,7 +32,7 @@ app.MapGet("/api/imports", () =>
     {
         new(1, "Informatica 1", 2021, DateTime.Now.AddDays(-3), (int)SpreadsheetsStatus.Finalizado, 30),
         new(2, "Engenharia Civil 2", 2021,  DateTime.Now.AddDays(-2), (int)SpreadsheetsStatus.Processando),
-        new(3, "Informatica 2", 2021, DateTime.Now.AddDays(-1), (int)SpreadsheetsStatus.Processando)
+        new(3, "Informatica 2", 2021, DateTime.Now.AddDays(-1), (int)SpreadsheetsStatus.Erro)
     };
 
     return Results.Ok(imports);

@@ -1,43 +1,61 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
+﻿using ImportadorNotasApp.DTOs;
+using Microsoft.AspNetCore.Components.Forms;
+using System.Net;
 
 namespace ImportadorNotasApp.Services
 {
     public class FileService
     {
-        private readonly HttpClient httpClient;
+        private readonly HttpClient _http;
 
-        public FileService(IHttpClientFactory httpClientFactory)
+        public FileService(HttpClient http) => _http = http;
+
+        public async Task<ImportResponse> UploadFile(IBrowserFile file, CancellationToken ct = default)
         {
-            httpClient = httpClientFactory.CreateClient(nameof(FileService));
-        }
+            if (file is null)
+            return new ImportResponse((int)HttpStatusCode.BadRequest, "Nenhum arquivo selecionado.");
 
-        public async Task<string> UploadFile(IBrowserFile browserFile)
-        {
-            byte[] bytes;
-            using (Stream stream = browserFile.OpenReadStream(maxAllowedSize: 10 * 1024 * 1024))
-            {
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    await stream.CopyToAsync(memoryStream);
-                    bytes = memoryStream.ToArray();
-                }
-            }
 
-            var form = new MultipartFormDataContent();
-            form.Add(new ByteArrayContent(bytes), "file", browserFile.Name);
+            const long MaxSize = 20 * 1024 * 1024; // 20MB
+
+            using var stream = file.OpenReadStream(MaxSize, ct);
+            using var form = new MultipartFormDataContent();
+            form.Add(new StreamContent(stream), "file", file.Name);
 
             try
             {
-                var response = await httpClient.PostAsync("api/imports", form);
-                response.EnsureSuccessStatusCode();
-                var filePath = await response.Content.ReadAsStringAsync();
+                using var resp = await _http.PostAsync("api/imports", form, ct);
 
-                return $"File uploaded successfully. File path: {filePath}";
+                if (resp.StatusCode == HttpStatusCode.Accepted)
+                {
+                    // 202 -> job enfileirado
+                    return new ImportResponse((int)HttpStatusCode.Accepted,
+                        "Processo iniciado. Aguarde o processamento.");
+                }
+
+                if (resp.IsSuccessStatusCode)
+                {
+                    // 200 -> processado síncrono
+                    return new ImportResponse((int)HttpStatusCode.OK,
+                        "Planilha importada com sucesso!");
+                }
+
+                // tenta extrair mensagem do corpo (problem details, etc.)
+                var body = await resp.Content.ReadAsStringAsync(ct);
+                var msg = string.IsNullOrWhiteSpace(body)
+                    ? $"Falha na importação"
+                    : $"Falha na importação";
+
+                return new ImportResponse((int)resp.StatusCode, msg);
+            }
+            catch (OperationCanceledException)
+            {
+                return new ImportResponse((int)HttpStatusCode.RequestTimeout, "Envio cancelado.");
             }
             catch (Exception ex)
             {
-
-                return ex.Message;
+                Console.WriteLine(ex.Message);
+                return new ImportResponse((int)HttpStatusCode.InternalServerError, $"Erro no servidor");
             }
         }
     }

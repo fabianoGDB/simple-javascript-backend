@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImportadorNotasApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7629b2bd9fa9af8c116962c42a1d7212574eee1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d6bf6d9860639f3fcc89963e2547fcb68b15ae3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImportadorNotasApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImportadorNotasApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
