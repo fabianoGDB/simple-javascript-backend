@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace SchoolETL.WorkerApi.DTOs;
+namespace SchoolETL.DTOs;
 
 
-public record ImportStatusDto(Guid JobId, string Status, ImportSummary? Summary, string? Error);
+public record ImportStatusDto(Guid JobId, string Status, ImportSummaryDto? Summary, string? Error);

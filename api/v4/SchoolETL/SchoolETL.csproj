@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+<PropertyGroup>
+<TargetFramework>net8.0</TargetFramework>
+<Nullable>enable</Nullable>
+<ImplicitUsings>enable</ImplicitUsings>
+<RootNamespace>SchoolETL</RootNamespace>
+<InvariantGlobalization>true</InvariantGlobalization>
+</PropertyGroup>
+  <ItemGroup>
+	  <PackageReference Include="NHibernate" Version="5.4.4" />
+	  <PackageReference Include="FluentNHibernate" Version="3.3.0" />
+	  <PackageReference Include="Npgsql" Version="8.0.8" />
+	  <PackageReference Include="ClosedXML" Version="0.102.3" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+</Project>

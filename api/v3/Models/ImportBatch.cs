@@ -1,6 +1,6 @@
-using SchoolETL.Core.Enums;
+using SchoolETL.Enums;
 
-namespace SchoolETL.Core.Models;
+namespace SchoolETL.Models;
 
 public class ImportBatch
 {
@@ -10,6 +10,8 @@ public class ImportBatch
     public string? StorageUri { get; set; }
     public SpreadsheetsStatus Status { get; set; } = SpreadsheetsStatus.Processando;
     public string? Error { get; set; }
+    public string? FileHash { get; set; }
     public int? PeriodoLetivoId { get; set; }
     public PeriodoLetivo? PeriodoLetivo { get; set; }
+    public ICollection<ImportSheet> Sheets { get; set; } = new List<ImportSheet>();
 }

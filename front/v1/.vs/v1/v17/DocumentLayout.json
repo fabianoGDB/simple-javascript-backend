@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\enums\\spreadsheetsstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\enums\\spreadsheetsstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\pages\\planilhas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\pages\\planilhas.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|c:\\users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\importadornotasapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36E229B5-DA32-E7C0-882B-703D5AC77D7E}|ImportadorNotasApp\\ImportadorNotasApp.csproj|solutionrelative:importadornotasapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SpreadsheetsStatus.cs",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Enums\\SpreadsheetsStatus.cs",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\Enums\\SpreadsheetsStatus.cs",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Enums\\SpreadsheetsStatus.cs",
-              "RelativeToolTip": "ImportadorNotasApp\\Enums\\SpreadsheetsStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Program.cs",
+              "RelativeDocumentMoniker": "ImportadorNotasApp\\Program.cs",
+              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Program.cs",
+              "RelativeToolTip": "ImportadorNotasApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T01:03:32.589Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Planilhas.razor",
-              "DocumentMoniker": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Planilhas.razor",
-              "RelativeDocumentMoniker": "ImportadorNotasApp\\Pages\\Planilhas.razor",
-              "ToolTip": "C:\\Users\\docto\\projetos\\javascript\\simplefront\\front\\v1\\ImportadorNotasApp\\Pages\\Planilhas.razor",
-              "RelativeToolTip": "ImportadorNotasApp\\Pages\\Planilhas.razor",
-              "ViewState": "AgIAABoAAAAAAAAAAAAcwCYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-28T00:46:33.441Z",
+              "WhenOpened": "2025-08-30T01:48:45.193Z",
               "EditorCaption": ""
             }
           ]

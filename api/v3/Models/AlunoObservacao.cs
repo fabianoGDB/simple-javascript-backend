@@ -1,4 +1,4 @@
-namespace SchoolETL.Core.Models;
+namespace SchoolETL.Models;
 
 public class AlunoObservacao
 {

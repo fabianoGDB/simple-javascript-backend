@@ -1,7 +1,7 @@
 // Services/ExcelEtlRunner.cs
 using ClosedXML.Excel;
 using Microsoft.EntityFrameworkCore;
-using SchoolETL.Core.Models;
+using SchoolETL.Models;
 using SchoolETL.Repositories;
 using SchoolETL.Repositories.Alunos;
 using SchoolETL.Repositories.Cursos;
@@ -9,8 +9,8 @@ using SchoolETL.Repositories.Dimensoes;
 using SchoolETL.Repositories.Disciplinas;
 using SchoolETL.Repositories.Imports;
 using SchoolETL.Repositories.Notas;
-using SchoolETL.WorkerApi.DTOs;
-using SchoolETL.WorkerApi.Services.Interfaces;
+using SchoolETL.DTOs;
+using SchoolETL.Services.Interfaces;
 using System.Text;
 using System.Text.RegularExpressions;
 

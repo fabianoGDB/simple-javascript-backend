@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using SchoolETL.Core.Data;
-using SchoolETL.Core.Models;
+using SchoolETL.Data;
+using SchoolETL.Models;
 
 namespace SchoolETL.Repositories.Alunos;
 

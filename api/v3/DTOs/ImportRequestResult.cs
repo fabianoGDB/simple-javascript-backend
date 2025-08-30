@@ -4,6 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace SchoolETL.WorkerApi.DTOs;
+namespace SchoolETL.DTOs;
 
 public record ImportRequestResult(Guid JobId);

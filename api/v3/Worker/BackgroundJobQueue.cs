@@ -1,6 +1,6 @@
 using System.Threading.Channels;
 
-namespace SchoolETL.WorkerApi.Worker;
+namespace SchoolETL.Worker;
 
 public interface IBackgroundJobQueue
 {

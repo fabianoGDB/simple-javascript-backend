@@ -1,7 +1,5 @@
-using SchoolETL.Core.Data;
-
+using SchoolETL.Data;
 namespace SchoolETL.Repositories;
-
 public class UnitOfWork : IUnitOfWork
 {
     private readonly DwContext _db;

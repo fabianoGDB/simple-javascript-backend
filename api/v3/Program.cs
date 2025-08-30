@@ -1,185 +1,162 @@
-using Microsoft.AspNetCore.Http.Features;
-using SchoolETL.WorkerApi.Worker;
-using SchoolETL.WorkerApi.Services;
-using SchoolETL.WorkerApi.Services.Interfaces;
-using SchoolETL.WorkerApi.DTOs;
+using System.Net.Mime;
+using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.EntityFrameworkCore;
+using SchoolETL.Api.Services;
+using SchoolETL.Data;
+using SchoolETL.DTOs;
 using SchoolETL.Repositories;
 using SchoolETL.Repositories.Alunos;
+using SchoolETL.Repositories.Dimensoes;
 using SchoolETL.Repositories.Imports;
 using SchoolETL.Repositories.Notas;
-using SchoolETL.Repositories.Disciplinas;
-using SchoolETL.Repositories.Cursos;
-using SchoolETL.Repositories.Dimensoes;
-using Microsoft.EntityFrameworkCore;
-using SchoolETL.Core.Data;
-using SchoolETL.Core.Models;
-using SchoolETL.Api.Services;
-
+using SchoolETL.Services;
+using SchoolETL.Services.Interfaces;
+using SchoolETL.Worker;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// CORS
+builder.Services.AddCors(o => o.AddPolicy("FrontendPolicy", p =>
+    p.WithOrigins(builder.Configuration.GetSection("AllowedCors").Get<string[]>() ?? Array.Empty<string>())
+     .AllowAnyHeader()
+     .AllowAnyMethod()
+));
 
+// DbContext
 builder.Services.AddDbContext<DwContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("Postgres")));
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("Postgres"))
+       .UseSnakeCaseNamingConvention());
 
+// Repositories / UoW
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-
 builder.Services.AddScoped<IImportRepository, ImportRepository>();
-builder.Services.AddScoped<IImportSheetRepository, ImportSheetRepository>();
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
-builder.Services.AddScoped<IFatoNotaRepository, FatoNotaRepository>();
-builder.Services.AddScoped<IDisciplinaRepository, DisciplinaRepository>();
-builder.Services.AddScoped<ICursoRepository, CursoRepository>();
 builder.Services.AddScoped<IPeriodoLetivoRepository, PeriodoLetivoRepository>();
 builder.Services.AddScoped<ISituacaoRepository, SituacaoRepository>();
+builder.Services.AddScoped<IFatoNotaRepository, FatoNotaRepository>();
 
-
-
-// uploads grandes (ajuste se necessário)
-builder.Services.Configure<FormOptions>(o => o.MultipartBodyLengthLimit = 1024L * 1024 * 300); // 300 MB
-
-// Fila de background baseada em Channel
+// Runner / Queue / Worker
+builder.Services.AddScoped<IExcelEtlRunner, ExcelEtlRunner>();
 builder.Services.AddSingleton<IBackgroundJobQueue, BackgroundJobQueue>();
-
-// Armazenamento simples de status em memória (troque por DB se quiser)
 builder.Services.AddSingleton<IJobStore, InMemoryJobStore>();
-
-// Worker
 builder.Services.AddHostedService<ImportWorker>();
 
-// Serviço de ETL (plugue seu runner real aqui)
-builder.Services.AddScoped<IExcelEtlRunner, ExcelEtlRunner>();
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader());
-});
-
-// Swagger
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
-app.UseSwagger();
-app.UseSwaggerUI();
+app.UseCors("FrontendPolicy");
 
+// ---------- Endpoints ----------
 
-app.MapGet("/api/imports", async (IImportRepository repo) =>
+// POST /api/imports  (recebe .xlsx e enfileira)
+app.MapPost("/api/imports", async (
+    HttpRequest req,
+    IBackgroundJobQueue queue,
+    IJobStore store,
+    ILoggerFactory logFactory,
+    CancellationToken ct) =>
 {
-    var list = await repo.ListWithPeriodo()
-        .Select(i => new
-        {
-            i.Id,
-            i.FileName,
-            i.CreatedAtUtc,
-            Periodo = i.PeriodoLetivo != null ? i.PeriodoLetivo.Descricao : null
-        }).ToListAsync();
-
-    return Results.Ok(list);
-});
-
-
-app.MapGet("/api/imports/{importId:guid}/alunos", async (Guid importId, IAlunoRepository repo) =>
-{
-    var alunos = await repo.QueryByImport(importId)
-        .OrderBy(a => a.Nome)
-        .Select(a => new { a.Id, a.Nome, a.Matricula, a.FrequenciaGeral, a.SituacaoCurso })
-        .ToListAsync();
-    return Results.Ok(alunos);
-});
-
-app.MapGet("/api/alunos/{alunoId:int}", async (int alunoId, Guid? importId,
-    IRepository<Aluno> alunos, IFatoNotaRepository fatos) =>
-{
-    var aluno = await alunos.GetByIdAsync(alunoId);
-    if (aluno is null) return Results.NotFound();
-
-    var q = fatos.QueryByAluno(alunoId, importId);
-
-    var medias = await q.GroupBy(f => f.BimestreId)
-        .Select(g => new { Bimestre = g.Key, Media = Math.Round(g.Average(x => x.Nota ?? 0), 2) })
-        .OrderBy(x => x.Bimestre).ToListAsync();
-
-    var notas = await q.OrderBy(f => f.BimestreId).ThenBy(f => f.EtapaId)
-        .Select(f => new
-        {
-            Disciplina = f.Disciplina!.Sigla,
-            f.EtapaId,
-            f.BimestreId,
-            f.Nota,
-            Situacao = f.Situacao != null ? f.Situacao.Descricao : null
-        }).ToListAsync();
-
-    return Results.Ok(new
-    {
-        Aluno = new { aluno.Id, aluno.Nome, aluno.Matricula, aluno.FrequenciaGeral, aluno.SituacaoCurso },
-        ImportIdUsado = importId,
-        MediasPorBimestre = medias,
-        Notas = notas
-    });
-});
-
-
-
-// POST /api/imports  -> recebe planilha e enfileira o ETL
-app.MapPost("/api/imports", async (HttpRequest req, IBackgroundJobQueue queue, IJobStore store) =>
-{
+    var log = logFactory.CreateLogger("UploadImport");
     if (!req.HasFormContentType) return Results.BadRequest("Use multipart/form-data");
 
-    var form = await req.ReadFormAsync();
+    var form = await req.ReadFormAsync(ct);
     var file = form.Files["file"];
     if (file is null) return Results.BadRequest("Campo 'file' (xlsx) é obrigatório.");
 
     var ano = int.TryParse(form["ano"], out var a) ? a : DateTime.UtcNow.Year;
     var semestre = int.TryParse(form["semestre"], out var s) ? s : 1;
+    if (semestre is < 1 or > 2) semestre = 1;
 
-    // salva temporário
+    var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
+    if (ext != ".xlsx") return Results.BadRequest("Formato não suportado. Envie um .xlsx.");
+
     var uploadRoot = Path.Combine(AppContext.BaseDirectory, "uploads");
     Directory.CreateDirectory(uploadRoot);
-    var tempPath = Path.Combine(uploadRoot, $"{DateTime.UtcNow:yyyyMMddHHmmssfff}_{Path.GetFileName(file.FileName)}");
-    await using (var fs = File.Create(tempPath))
-        await file.CopyToAsync(fs);
 
-    // cria job
+    var id = Guid.NewGuid();
+    var tmpPath = Path.Combine(uploadRoot, id + ext);
+    await using (var fs = File.Create(tmpPath)) await file.CopyToAsync(fs, ct);
+
     var job = new ImportJob
     {
-        Id = Guid.NewGuid(),
-        FilePath = tempPath,
+        Id = id,
+        FilePath = tmpPath,
+        OriginalFileName = file.FileName,
         Ano = ano,
         Semestre = semestre,
         Status = JobStatus.Queued,
         CreatedAtUtc = DateTime.UtcNow
     };
 
-    store.Upsert(job);          // guarda status inicial
-    await queue.QueueAsync(job); // enfileira
+    store.Upsert(job);
+    await queue.QueueAsync(job, ct);
+    log.LogInformation("Upload aceito {Id} - {File}", id, file.FileName);
 
-    return Results.Accepted($"/api/imports/{job.Id}", new ImportRequestResult(job.Id));
+    return Results.Accepted($"/api/imports/{id}", new ImportRequestResult(id));
 })
-.Accepts<IFormFile>("multipart/form-data")
-.Produces<ImportRequestResult>(202)
+.Accepts<IFormFile>(MediaTypeNames.Multipart.FormData)
+.Produces<ImportRequestResult>(StatusCodes.Status202Accepted)
+.ProducesProblem(StatusCodes.Status400BadRequest)
+.DisableAntiforgery()
 .WithName("UploadImport");
 
-// GET /api/imports/{jobId} -> status do job
-app.MapGet("/api/imports/{jobId:guid}", (Guid jobId, IJobStore store) =>
+// GET /api/imports -> todas as planilhas importadas
+app.MapGet("/api/imports", async (DwContext db) =>
 {
-    var job = store.Get(jobId);
-    if (job is null) return Results.NotFound();
+    var list = await db.Imports
+        .OrderByDescending(i => i.CreatedAtUtc)
+        .Select(i => new {
+            i.Id,
+            i.OriginalFileName,
+            i.CreatedAtUtc,
+            Status = (int)i.Status,
+            i.Error
+        }).ToListAsync();
 
-    var dto = new ImportStatusDto(
-        JobId: job.Id,
-        Status: job.Status.ToString(),
-        Summary: job.Summary,
-        Error: job.ErrorMessage
-    );
-    return Results.Ok(dto);
-})
-.Produces<ImportStatusDto>(200);
+    return Results.Ok(list);
+});
 
+// GET /api/imports/{id}/status
+app.MapGet("/api/imports/{id:guid}/status", (Guid id, IJobStore store, DwContext db) =>
+{
+    var job = store.Get(id);
+    if (job is not null)
+        return Results.Ok(new ImportStatusDto(job.Id, job.Status.ToString(), job.Summary, job.ErrorMessage));
 
-app.UseCors("AllowAll");
+    var batch = db.Imports.FirstOrDefault(i => i.Id == id);
+    if (batch is null) return Results.NotFound();
+
+    return Results.Ok(new ImportStatusDto(batch.Id, batch.Status.ToString(), null, batch.Error));
+});
+
+// GET /api/imports/{id}/alunos
+app.MapGet("/api/imports/{id:guid}/alunos", async (Guid id, IAlunoRepository repo) =>
+{
+    var alunos = await repo.QueryByImport(id)
+        .OrderBy(a => a.Nome)
+        .Select(a => new { a.Id, a.Nome, a.Matricula })
+        .ToListAsync();
+    return Results.Ok(alunos);
+});
+
+// GET /api/alunos/{alunoId}
+app.MapGet("/api/alunos/{alunoId:int}", async (int alunoId, Guid? importId,
+    IFatoNotaRepository fatos, IRepository<SchoolETL.Models.Aluno> alunos) =>
+{
+    var a = await alunos.GetByIdAsync(alunoId);
+    if (a is null) return Results.NotFound();
+
+    var q = fatos.QueryByAluno(alunoId, importId);
+    var notas = await q.Select(f => new {
+        f.PeriodoAvaliativoId,
+        Disciplina = f.Disciplina!.Sigla,
+        f.Nota,
+        Situacao = f.Situacao != null ? f.Situacao.Descricao : null
+    }).ToListAsync();
+
+    return Results.Ok(new { Aluno = new { a.Id, a.Nome, a.Matricula }, Notas = notas });
+});
+
+// Preflight CORS
+app.MapMethods("{*path}", new[] { "OPTIONS" }, () => Results.Ok());
+
 app.Run();

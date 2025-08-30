@@ -1,14 +1,14 @@
 using ClosedXML.Excel;
 using Microsoft.EntityFrameworkCore;
-using SchoolETL.Core.Data;
-using SchoolETL.Core.Models;
-using SchoolETL.WorkerApi.DTOs;
-using SchoolETL.WorkerApi.Services; // ImportSummary / IExcelEtlRunner
-using SchoolETL.WorkerApi.Services.Interfaces;
+using SchoolETL.Data;
+using SchoolETL.Models;
+using SchoolETL.DTOs;
+using SchoolETL.Services; // ImportSummary / IExcelEtlRunner
+using SchoolETL.Services.Interfaces;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace SchoolETL.WorkerApi.Data;
+namespace SchoolETL.Data;
 
 public class ExcelEtlRunnerEf : IExcelEtlRunner
 {

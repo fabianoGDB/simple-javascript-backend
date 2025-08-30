@@ -1,5 +1,5 @@
-using SchoolETL.WorkerApi.Services.Interfaces;
-using SchoolETL.WorkerApi.Worker;
+using SchoolETL.Services.Interfaces;
+using SchoolETL.Worker;
 
 public class ImportWorker : BackgroundService
 {

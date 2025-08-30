@@ -1,4 +1,4 @@
-using SchoolETL.Core.Models;
+using SchoolETL.Models;
 
 namespace SchoolETL.Repositories.Disciplinas;
 

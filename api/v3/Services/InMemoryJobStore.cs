@@ -1,8 +1,8 @@
 using System.Collections.Concurrent;
-using SchoolETL.WorkerApi.Services.Interfaces;
-using SchoolETL.WorkerApi.Worker;
+using SchoolETL.Services.Interfaces;
+using SchoolETL.Worker;
 
-namespace SchoolETL.WorkerApi.Services;
+namespace SchoolETL.Services;
 
 public class InMemoryJobStore : IJobStore
 {

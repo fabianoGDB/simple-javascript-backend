@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using SchoolETL.Core.Data;
+using SchoolETL.Data;
 
 #nullable disable
 
@@ -22,7 +22,7 @@ namespace v3.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Aluno", b =>
+            modelBuilder.Entity("SchoolETL.Models.Aluno", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +66,7 @@ namespace v3.Migrations
                     b.ToTable("alunos");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.AlunoObservacao", b =>
+            modelBuilder.Entity("SchoolETL.Models.AlunoObservacao", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -95,7 +95,7 @@ namespace v3.Migrations
                     b.ToTable("aluno_observacoes");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Bimestre", b =>
+            modelBuilder.Entity("SchoolETL.Models.Bimestre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -136,7 +136,7 @@ namespace v3.Migrations
                         });
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Curso", b =>
+            modelBuilder.Entity("SchoolETL.Models.Curso", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -169,7 +169,7 @@ namespace v3.Migrations
                     b.ToTable("cursos");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Disciplina", b =>
+            modelBuilder.Entity("SchoolETL.Models.Disciplina", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -206,7 +206,7 @@ namespace v3.Migrations
                     b.ToTable("disciplinas");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Etapa", b =>
+            modelBuilder.Entity("SchoolETL.Models.Etapa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -252,7 +252,7 @@ namespace v3.Migrations
                         });
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.FatoNota", b =>
+            modelBuilder.Entity("SchoolETL.Models.FatoNota", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -322,7 +322,7 @@ namespace v3.Migrations
                     b.ToTable("fato_notas");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.ImportBatch", b =>
+            modelBuilder.Entity("SchoolETL.Models.ImportBatch", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -350,7 +350,7 @@ namespace v3.Migrations
                     b.ToTable("imports");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.ImportSheet", b =>
+            modelBuilder.Entity("SchoolETL.Models.ImportSheet", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -380,7 +380,7 @@ namespace v3.Migrations
                     b.ToTable("import_sheets");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.PeriodoLetivo", b =>
+            modelBuilder.Entity("SchoolETL.Models.PeriodoLetivo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -406,7 +406,7 @@ namespace v3.Migrations
                     b.ToTable("periodos");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Situacao", b =>
+            modelBuilder.Entity("SchoolETL.Models.Situacao", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -452,9 +452,9 @@ namespace v3.Migrations
                         });
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.AlunoObservacao", b =>
+            modelBuilder.Entity("SchoolETL.Models.AlunoObservacao", b =>
                 {
-                    b.HasOne("SchoolETL.Core.Models.Aluno", "Aluno")
+                    b.HasOne("SchoolETL.Models.Aluno", "Aluno")
                         .WithMany("Observacoes")
                         .HasForeignKey("AlunoId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -463,43 +463,43 @@ namespace v3.Migrations
                     b.Navigation("Aluno");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.FatoNota", b =>
+            modelBuilder.Entity("SchoolETL.Models.FatoNota", b =>
                 {
-                    b.HasOne("SchoolETL.Core.Models.Aluno", "Aluno")
+                    b.HasOne("SchoolETL.Models.Aluno", "Aluno")
                         .WithMany("Notas")
                         .HasForeignKey("AlunoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("SchoolETL.Core.Models.Bimestre", "Bimestre")
+                    b.HasOne("SchoolETL.Models.Bimestre", "Bimestre")
                         .WithMany("Notas")
                         .HasForeignKey("BimestreId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("SchoolETL.Core.Models.Curso", "Curso")
+                    b.HasOne("SchoolETL.Models.Curso", "Curso")
                         .WithMany("Notas")
                         .HasForeignKey("CursoId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("SchoolETL.Core.Models.Disciplina", "Disciplina")
+                    b.HasOne("SchoolETL.Models.Disciplina", "Disciplina")
                         .WithMany("Notas")
                         .HasForeignKey("DisciplinaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("SchoolETL.Core.Models.Etapa", "Etapa")
+                    b.HasOne("SchoolETL.Models.Etapa", "Etapa")
                         .WithMany("Notas")
                         .HasForeignKey("EtapaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("SchoolETL.Core.Models.PeriodoLetivo", "PeriodoLetivo")
+                    b.HasOne("SchoolETL.Models.PeriodoLetivo", "PeriodoLetivo")
                         .WithMany("Notas")
                         .HasForeignKey("PeriodoLetivoId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("SchoolETL.Core.Models.Situacao", "Situacao")
+                    b.HasOne("SchoolETL.Models.Situacao", "Situacao")
                         .WithMany("Notas")
                         .HasForeignKey("SituacaoId")
                         .OnDelete(DeleteBehavior.SetNull);
@@ -519,9 +519,9 @@ namespace v3.Migrations
                     b.Navigation("Situacao");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.ImportBatch", b =>
+            modelBuilder.Entity("SchoolETL.Models.ImportBatch", b =>
                 {
-                    b.HasOne("SchoolETL.Core.Models.PeriodoLetivo", "PeriodoLetivo")
+                    b.HasOne("SchoolETL.Models.PeriodoLetivo", "PeriodoLetivo")
                         .WithMany()
                         .HasForeignKey("PeriodoLetivoId")
                         .OnDelete(DeleteBehavior.SetNull);
@@ -529,9 +529,9 @@ namespace v3.Migrations
                     b.Navigation("PeriodoLetivo");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.ImportSheet", b =>
+            modelBuilder.Entity("SchoolETL.Models.ImportSheet", b =>
                 {
-                    b.HasOne("SchoolETL.Core.Models.ImportBatch", "ImportBatch")
+                    b.HasOne("SchoolETL.Models.ImportBatch", "ImportBatch")
                         .WithMany("Sheets")
                         .HasForeignKey("ImportId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -540,44 +540,44 @@ namespace v3.Migrations
                     b.Navigation("ImportBatch");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Aluno", b =>
+            modelBuilder.Entity("SchoolETL.Models.Aluno", b =>
                 {
                     b.Navigation("Notas");
 
                     b.Navigation("Observacoes");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Bimestre", b =>
+            modelBuilder.Entity("SchoolETL.Models.Bimestre", b =>
                 {
                     b.Navigation("Notas");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Curso", b =>
+            modelBuilder.Entity("SchoolETL.Models.Curso", b =>
                 {
                     b.Navigation("Notas");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Disciplina", b =>
+            modelBuilder.Entity("SchoolETL.Models.Disciplina", b =>
                 {
                     b.Navigation("Notas");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Etapa", b =>
+            modelBuilder.Entity("SchoolETL.Models.Etapa", b =>
                 {
                     b.Navigation("Notas");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.ImportBatch", b =>
+            modelBuilder.Entity("SchoolETL.Models.ImportBatch", b =>
                 {
                     b.Navigation("Sheets");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.PeriodoLetivo", b =>
+            modelBuilder.Entity("SchoolETL.Models.PeriodoLetivo", b =>
                 {
                     b.Navigation("Notas");
                 });
 
-            modelBuilder.Entity("SchoolETL.Core.Models.Situacao", b =>
+            modelBuilder.Entity("SchoolETL.Models.Situacao", b =>
                 {
                     b.Navigation("Notas");
                 });

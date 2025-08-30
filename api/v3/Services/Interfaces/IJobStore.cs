@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SchoolETL.WorkerApi.Worker;
+using SchoolETL.Worker;
 
-namespace SchoolETL.WorkerApi.Services.Interfaces
+namespace SchoolETL.Services.Interfaces
 {
     public interface IJobStore
     {

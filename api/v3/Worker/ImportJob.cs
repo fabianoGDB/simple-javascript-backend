@@ -1,6 +1,6 @@
-using SchoolETL.WorkerApi.DTOs;
+using SchoolETL.DTOs;
 
-namespace SchoolETL.WorkerApi.Worker;
+namespace SchoolETL.Worker;
 
 public enum JobStatus { Queued, Running, Succeeded, Failed }
 

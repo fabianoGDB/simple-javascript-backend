@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using SchoolETL.WorkerApi.DTOs;
+using SchoolETL.DTOs;
 
-namespace SchoolETL.WorkerApi.Services.Interfaces;
+namespace SchoolETL.Services.Interfaces;
 
 public interface IExcelEtlRunner
 {
