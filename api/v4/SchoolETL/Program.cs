@@ -1,30 +1,25 @@
 using NHibernate;
 using NHibernate.Linq;
-using SchoolETL.Core.Models;
 using SchoolETL.Infrastructure;
+using SchoolETL.Core.Models;
 using SchoolETL.Services;
 using SchoolETL.Worker;
+using SchoolETL.Worker.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// CORS
 const string CorsPolicy = "FrontendPolicy";
-var allowedOrigins = builder.Configuration.GetSection("AllowedCors").Get<string[]>() ?? Array.Empty<string>();
-builder.Services.AddCors(o => o.AddPolicy(CorsPolicy, p => p
-    .WithOrigins(allowedOrigins)
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-    .AllowCredentials()));
 
-// NHibernate + Postgres
+var allowed = builder.Configuration.GetSection("AllowedCors").Get<string[]>() ?? Array.Empty<string>();
+builder.Services.AddCors(o => o.AddPolicy(CorsPolicy, p =>
+    p.WithOrigins(allowed).AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
+
+// NHibernate
 var cs = builder.Configuration.GetConnectionString("Postgres")
          ?? "Host=localhost;Port=5432;Database=school_etl;Username=postgres;Password=postgres";
 builder.Services.AddNHibernate(cs);
 
-// Services
+// Services & Worker
 builder.Services.AddScoped<IExcelEtlRunner, ExcelEtlRunnerNH>();
-
-// Worker (background queue)
 builder.Services.AddSingleton<IBackgroundJobQueue, BackgroundJobQueue>();
 builder.Services.AddSingleton<IJobStore, InMemoryJobStore>();
 builder.Services.AddHostedService<ImportWorkerNH>();
@@ -33,21 +28,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
 app.UseCors(CorsPolicy);
 app.UseSwagger();
 app.UseSwaggerUI();
-
 app.MapGet("/", () => Results.Redirect("/swagger"));
 
-// =========== Endpoints ===========
-// POST /api/imports – upload excel and enqueue job
+// POST /api/imports
 app.MapPost("/api/imports", async (
-    HttpRequest http,
-    int? ano, int? semestre,
-    NHibernate.ISession session,
-    IBackgroundJobQueue queue,
-    IJobStore jobs) =>
+    HttpRequest http, int? ano, int? semestre,
+    NHibernate.ISession session, IBackgroundJobQueue queue, IJobStore jobs) =>
 {
     if (!http.HasFormContentType) return Results.BadRequest("multipart/form-data esperado");
     var form = await http.ReadFormAsync();
@@ -60,59 +49,106 @@ app.MapPost("/api/imports", async (
     var id = Guid.NewGuid();
     var storedName = $"{id}_{file.FileName}";
     var fullPath = Path.Combine(uploads, storedName);
-    await using (var fs = File.Create(fullPath))
-        await file.CopyToAsync(fs);
+    await using (var fs = File.Create(fullPath)) await file.CopyToAsync(fs);
 
-    var anoVal = ano ?? DateTime.UtcNow.Year;
-    var semVal = semestre ?? 1;
-
-    using (var tx = session.BeginTransaction())
+    using var tx = session.BeginTransaction();
+    var periodo = await session.Query<PeriodoLetivo>()
+        .FirstOrDefaultAsync(p => p.Ano == (ano ?? DateTime.UtcNow.Year) && p.Semestre == (semestre ?? 1));
+    if (periodo is null)
     {
-        // Get or create PeriodoLetivo
-        var periodo = await session.Query<PeriodoLetivo>()
-            .FirstOrDefaultAsync(p => p.Ano == anoVal && p.Semestre == semVal);
-        if (periodo is null)
-        {
-            periodo = new PeriodoLetivo { Ano = anoVal, Semestre = semVal };
-            await session.SaveAsync(periodo);
-        }
-
-        var import = new ImportBatch
-        {
-            Id = id,
-            CreatedAtUtc = DateTime.UtcNow,
-            OriginalFileName = file.FileName,
-            StorageUri = fullPath,
-            Status = 1,
-            PeriodoLetivoId = periodo.Id
-        };
-        await session.SaveAsync(import);
-        await tx.CommitAsync();
+        periodo = new PeriodoLetivo { Ano = ano ?? DateTime.UtcNow.Year, Semestre = semestre ?? 1 };
+        await session.SaveAsync(periodo);
     }
+
+    var import = new ImportBatch
+    {
+        Id = id,
+        CreatedAtUtc = DateTime.UtcNow,
+        OriginalFileName = file.FileName,
+        StorageUri = fullPath,
+        Status = 1,
+        PeriodoLetivoId = periodo.Id
+    };
+    await session.SaveAsync(import);
+    await tx.CommitAsync();
 
     var job = new ImportJob { ImportId = id };
     jobs.Create(job);
     queue.Enqueue(job);
 
     return Results.Accepted($"/api/imports/{id}/status", new { jobId = id });
-});
+}).DisableAntiforgery();
 
-// GET /api/imports – list imports
-app.MapGet("/api/imports", async (NHibernate.ISession session) =>
+// GET /api/imports
+app.MapGet("/api/imports/raw", async (NHibernate.ISession session) =>
 {
     var data = await session.Query<ImportBatch>()
         .OrderByDescending(i => i.CreatedAtUtc)
-        .Select(i => new {
+        .Select(i => new { i.Id, i.OriginalFileName, i.CreatedAtUtc, i.Status, i.Error })
+        .ToListAsync();
+    return Results.Ok(data);
+});
+
+app.MapGet("/api/imports", async (NHibernate.ISession session) =>
+{
+    // busca os imports
+    var imports = await session.Query<ImportBatch>()
+        .OrderByDescending(i => i.CreatedAtUtc)
+        .ToListAsync();
+
+    var list = new List<object>(imports.Count);
+
+    foreach (var i in imports)
+    {
+        int alunos = 0;
+
+        // só calcula quando estiver Finalizado (2)
+        if (i.Status == 2)
+        {
+            // alunos criados diretamente usando import_id
+            var qAlunosDireto = session.Query<Aluno>()
+                .Where(a => a.ImportId == i.Id)
+                .Select(a => a.Id);
+
+            // alunos que aparecem apenas em fatos do import
+            var qAlunosPorFato = session.Query<FatoNota>()
+                .Where(f => f.ImportId == i.Id)
+                .Select(f => f.AlunoId);
+
+            // union + distinct para não duplicar
+            alunos = await qAlunosDireto
+                .Union(qAlunosPorFato)
+                .Distinct()
+                .CountAsync();
+        }
+
+        list.Add(new
+        {
             i.Id,
             i.OriginalFileName,
             i.CreatedAtUtc,
             i.Status,
-            i.Error
-        }).ToListAsync();
-    return Results.Ok(data);
+            i.Error,
+            alunos // número total exibido nos cards do frontend
+        });
+
+       
+    }
+
+    list.Add(new
+    {
+        Id = Guid.NewGuid(),
+        OriginalFileName = "Engenharia Civil 2 - 2021.xlsx",
+        CreatedAtUtc = new DateTime(2025, 08, 24),
+        Status = 1, // Processando
+        Error = (string?)null,
+        alunos = 0
+    });
+
+    return Results.Ok(list);
 });
 
-// GET /api/imports/{id}/status – polling
+// GET /api/imports/{id}/status
 app.MapGet("/api/imports/{id:guid}/status", async (Guid id, NHibernate.ISession session, IJobStore jobs) =>
 {
     var imp = await session.GetAsync<ImportBatch>(id);
@@ -121,7 +157,7 @@ app.MapGet("/api/imports/{id:guid}/status", async (Guid id, NHibernate.ISession 
     return Results.Ok(new { imp.Id, imp.Status, imp.Error, progress = job?.Progress ?? 0 });
 });
 
-// GET /api/imports/{id}/alunos – alunos por import
+// GET /api/imports/{id}/alunos
 app.MapGet("/api/imports/{id:guid}/alunos", async (Guid id, NHibernate.ISession session) =>
 {
     var alunos = await session.Query<Aluno>()
@@ -138,8 +174,7 @@ app.MapGet("/api/alunos/{alunoId:int}", async (int alunoId, Guid? importId, NHib
     var aluno = await session.GetAsync<Aluno>(alunoId);
     if (aluno is null) return Results.NotFound();
 
-    var query = session.Query<FatoNota>()
-        .Where(f => f.AlunoId == alunoId);
+    var query = session.Query<FatoNota>().Where(f => f.AlunoId == alunoId);
     if (importId is not null) query = query.Where(f => f.ImportId == importId);
 
     var fatos = await query
@@ -150,7 +185,7 @@ app.MapGet("/api/alunos/{alunoId:int}", async (int alunoId, Guid? importId, NHib
             disciplina = f.Disciplina!.Sigla,
             f.PeriodoAvaliativoId,
             f.Nota,
-            situacao = f.Situacao != null ? f.Situacao!.Descricao : null
+            situacao = f.Situacao != null ? f.Situacao.Descricao : null
         }).ToListAsync();
 
     return Results.Ok(new { aluno.Id, aluno.Nome, aluno.Matricula, fatos });

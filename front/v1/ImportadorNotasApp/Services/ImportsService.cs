@@ -19,13 +19,15 @@ namespace ImportadorNotasApp.Services
             {
                 var response = await httpClient.GetAsync("api/imports");
                 response.EnsureSuccessStatusCode();
-                var importedSpreadsheet = await response.Content.ReadFromJsonAsync<List<ImportedSpreadsheetDto>>();
 
-                return importedSpreadsheet ?? [];
+                var importedSpreadsheets = await response.Content
+                    .ReadFromJsonAsync<List<ImportedSpreadsheetDto>>();
+
+                return importedSpreadsheets ?? [];
             }
             catch (Exception ex)
             {
-                // log ou tratamento
+                // log ou tratamento de erro
                 throw new ApplicationException("Erro ao carregar planilhas.", ex);
             }
         }

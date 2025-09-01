@@ -26,9 +26,9 @@ else if (spreadsheets is not null && spreadsheets.Any())
                  style="@(spreadsheet.Status == 1 ? "cursor: pointer;" : "cursor: default;")"
                  @onclick="() => HandleClick(spreadsheet)">
                     <div class="icon">📄</div>
-                    <div class="title">@spreadsheet.ClassName - @spreadsheet.Year</div>
-                    <div class="info">Importado em: @spreadsheet.ImportedAt.ToString("dd/MM/yyyy")</div>
-                    <div class="student-info">@spreadsheet.StudentCount aluno(s)</div>
+                    <div class="title">@spreadsheet.OriginalFileName</div>
+                    <div class="info">Importado em: @spreadsheet.CreatedAtUtc.ToString("dd/MM/yyyy")</div>
+                    <div class="student-info">@spreadsheet.Alunos aluno(s)</div>
                     <div class="status @(spreadsheet.Status == 1 ? "processando" :
                                       spreadsheet.Status == 2 ? "finalizado" :
                                       spreadsheet.Status == 3 ? "erro" : "")">

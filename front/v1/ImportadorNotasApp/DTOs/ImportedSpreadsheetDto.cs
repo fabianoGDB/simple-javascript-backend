@@ -1,4 +1,12 @@
 ﻿namespace ImportadorNotasApp.DTOs
 {
-    public record ImportedSpreadsheetDto(int Id, string ClassName, int Year, DateTime ImportedAt, int Status, int StudentCount);
+    public class ImportedSpreadsheetDto
+    {
+        public Guid Id { get; set; }
+        public string OriginalFileName { get; set; } = string.Empty;
+        public DateTime CreatedAtUtc { get; set; }
+        public int Status { get; set; }
+        public string? Error { get; set; }
+        public int Alunos { get; set; }
+    }
 }

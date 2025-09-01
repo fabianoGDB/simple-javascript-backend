@@ -1,6 +1,6 @@
-﻿
-namespace SchoolETL.Worker;
+﻿using SchoolETL.Worker.DTOs;
 
+namespace SchoolETL.Worker;
 
 public interface IBackgroundJobQueue
 {
