@@ -7,18 +7,20 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5142") });
+var uri = new Uri("http://localhost:5155");
+
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = uri });
 
 
 
 builder.Services.AddHttpClient(nameof(FileService), client =>
 {
-    client.BaseAddress = new Uri("http://localhost:5142");
+    client.BaseAddress = uri;
 });
 
 builder.Services.AddHttpClient(nameof(ImportsService), client =>
 {
-    client.BaseAddress = new Uri("http://localhost:5142");
+    client.BaseAddress = uri;
 });
 
 builder.Services.AddScoped<FileService>();

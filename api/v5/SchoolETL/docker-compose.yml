@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: school_etl
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  api:
+    build:
+      context: .
+      dockerfile: SchoolETL/Dockerfile
+    environment:
+      ConnectionStrings__Postgres: Host=db;Port=5432;Database=school_etl;Username=postgres;Password=postgres
+      ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - "5149:5149"
+    depends_on:
+      - db
+    volumes:
+      - uploads:/app/uploads
+volumes:
+  pgdata:
+  uploads:

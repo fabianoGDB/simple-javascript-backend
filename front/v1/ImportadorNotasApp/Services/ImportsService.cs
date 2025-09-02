@@ -1,6 +1,6 @@
 ﻿using ImportadorNotasApp.DTOs;
-using Microsoft.AspNetCore.Components.Forms;
 using System.Net.Http.Json;
+using IHttpClientFactory = System.Net.Http.IHttpClientFactory;
 
 namespace ImportadorNotasApp.Services
 {
