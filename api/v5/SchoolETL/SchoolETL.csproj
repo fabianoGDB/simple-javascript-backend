@@ -3,15 +3,23 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
     <RootNamespace>SchoolETL</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- ORM -->
     <PackageReference Include="NHibernate" Version="5.4.4" />
     <PackageReference Include="FluentNHibernate" Version="3.3.0" />
-    <PackageReference Include="Npgsql" Version="8.0.8" />
+
+    <!-- Postgres driver -->
+    <PackageReference Include="Npgsql" Version="9.0.0" />
+
+    <!-- Excel + CSV -->
     <PackageReference Include="ClosedXML" Version="0.102.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="CsvHelper" Version="30.0.1" />
+
+    <!-- Swagger (você usa AddSwaggerGen/UseSwagger) -->    
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 </Project>

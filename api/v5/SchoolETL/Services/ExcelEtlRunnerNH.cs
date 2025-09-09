@@ -21,7 +21,6 @@ public partial class ExcelEtlRunnerNH : IExcelEtlRunner
     public async Task RunAsync(ImportBatch import, CancellationToken ct)
     {
         await UpdateImport(import, 1, null, ct); // Processando
-
         try
         {
             await RunRegistrosOnly(import, _session, ct);
@@ -151,9 +150,16 @@ public partial class ExcelEtlRunnerNH : IExcelEtlRunner
 
                 if (nota is null && faltas is null && string.IsNullOrWhiteSpace(sitKey)) continue;
 
-                var sigla = ReadUpperHeader(ws, rowHeader, b.NotaCol);
-                if (string.IsNullOrWhiteSpace(sigla)) sigla = $"DISC_{b.NotaCol}";
-                int disciplinaId = GetOrCreateDisciplinaId(sigla, import, disciplinasBySigla);
+                // Lê cabeçalho "superior" da disciplina na coluna de Nota
+                var headerText = ReadUpperHeader(ws, rowHeader, b.NotaCol);
+                if (string.IsNullOrWhiteSpace(headerText))
+                    headerText = $"DISC_{b.NotaCol}";
+
+                // Separa sigla e carga horária
+                var (discSigla, carga) = ParseDisciplinaHeader(headerText);
+
+                // Garante persistência de disciplina com sigla correta e carga horária no campo certo
+                int disciplinaId = GetOrCreateDisciplinaId(discSigla, carga, import, disciplinasBySigla);
 
                 int? situacaoId = null;
                 if (!string.IsNullOrWhiteSpace(sitKey) && situacoesByDesc.TryGetValue(sitKey, out var id))
@@ -214,11 +220,19 @@ public partial class ExcelEtlRunnerNH : IExcelEtlRunner
         return a.Id;
     }
 
-    private int GetOrCreateDisciplinaId(string sigla, ImportBatch import, Dictionary<string, int> cache)
+    // Agora recebe também a carga horária para gravar no campo correto
+    private int GetOrCreateDisciplinaId(string siglaRaw, string? cargaHoraria, ImportBatch import, Dictionary<string, int> cache)
     {
-        var key = Normalize(sigla);
+        var key = Normalize(siglaRaw);
         if (cache.TryGetValue(key, out var id)) return id;
-        var d = new Disciplina { Sigla = sigla, ImportId = import.Id };
+
+        var d = new Disciplina
+        {
+            Sigla = siglaRaw,                  // apenas a sigla/código (ex.: "INT.09889")
+            CargaHorariaRotulo = cargaHoraria, // ex.: "44H de 160H"
+            ImportId = import.Id
+        };
+
         _session.Save(d);
         cache[key] = d.Id;
         return d.Id;
@@ -301,6 +315,9 @@ public partial class ExcelEtlRunnerNH : IExcelEtlRunner
         s = s.Trim();
         return Regex.Replace(s, @"\s+", " ");
     }
+    private static string NormalizeDisciplina(string raw)
+        => raw.Replace('\n', ' ').Replace('\r', ' ').Trim();
+
     private static bool IsOnlyDigits(string s) => s.Length > 0 && s.All(char.IsDigit);
 
     private static decimal? ParseDecimal(string? raw)
@@ -312,7 +329,31 @@ public partial class ExcelEtlRunnerNH : IExcelEtlRunner
             ? d : (decimal?)null;
     }
 
-    // COPY DTOs + COPY writers
+    // Extrai (sigla, "44H de 160H") do cabeçalho
+    private (string sigla, string? carga) ParseDisciplinaHeader(string header)
+    {
+        // Normaliza e remove quebras de linha
+        var text = NormalizeDisciplina(header);
+
+        // encontra padrão de carga horária
+        string? carga = null;
+        var m = Regex.Match(text, @"\b\d+H\s+de\s+\d+H\b", RegexOptions.IgnoreCase);
+        if (m.Success)
+        {
+            carga = m.Value.Trim();                  // "44H de 160H"
+            text = text.Replace(m.Value, "").Trim(); // remove do texto
+        }
+
+        // limpa espaços duplicados e parênteses soltos
+        text = Regex.Replace(text, @"\s{2,}", " ").Trim();
+        text = text.Trim('(', ')').Trim();
+
+        // se sobrar vazio, usa o original
+        var sigla = string.IsNullOrWhiteSpace(text) ? header.Trim() : text;
+        return (sigla, carga);
+    }
+
+    // ======================= COPY (bulk insert) =======================
     private sealed class FatoNotaRow
     {
         public Guid ImportId { get; init; }
@@ -324,6 +365,7 @@ public partial class ExcelEtlRunnerNH : IExcelEtlRunner
         public decimal? Nota { get; init; }
         public decimal? Faltas { get; init; }
     }
+
     private sealed class AlunoStatusRow
     {
         public Guid ImportId { get; init; }

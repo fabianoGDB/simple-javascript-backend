@@ -9,15 +9,15 @@ public class ImportBatchMap : ClassMap<ImportBatch>
     public ImportBatchMap()
     {
         Table("import_batch");
-        Id(x => x.Id)
-            .GeneratedBy.GuidComb();  // <-- troque Assigned() por GuidComb()
+        Id(x => x.Id).GeneratedBy.GuidComb();
         Map(x => x.CreatedAtUtc).Column("created_at_utc").Not.Nullable();
         Map(x => x.OriginalFileName).Column("original_file_name");
         Map(x => x.StorageUri).Column("storage_uri");
         Map(x => x.Status).Not.Nullable();
         Map(x => x.Error);
         Map(x => x.FileHash).Column("file_hash");
-        Map(x => x.PeriodoLetivoId).Column("periodo_letivo_id").Nullable();
+        Map(x => x.PeriodoLetivoId).Column("periodo_letivo_id");
+        Map(x => x.WorkingDir).Column("working_dir");
     }
 }
 

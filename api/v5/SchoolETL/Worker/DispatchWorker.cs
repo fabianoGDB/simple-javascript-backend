@@ -1,87 +1,103 @@
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using NHibernate;
 using NHibernate.Linq;
 using SchoolETL.Core.Models;
-using ISession = NHibernate.ISession;
+using SchoolETL.Services;
+
 namespace SchoolETL.Worker;
 
-public class DispatchWorker : BackgroundService
+public sealed class DispatchWorker : BackgroundService
 {
     private readonly ILogger<DispatchWorker> _log;
-    private readonly IDispatchQueue _dispatch;
-    private readonly IStageQueue _stages;
-    private readonly IServiceScopeFactory _scope;
+    private readonly IBackgroundJobQueue _q;
+    private readonly ISessionFactory _sf;
+    private readonly ExcelToCsvSplitter _splitter;
 
-    public DispatchWorker(ILogger<DispatchWorker> log, IDispatchQueue dispatch, IStageQueue stages, IServiceScopeFactory scope)
-    { _log = log; _dispatch = dispatch; _stages = stages; _scope = scope; }
+    public DispatchWorker(ILogger<DispatchWorker> log, IBackgroundJobQueue q, ISessionFactory sf, ExcelToCsvSplitter splitter)
+    { _log = log; _q = q; _sf = sf; _splitter = splitter; }
 
     protected override async Task ExecuteAsync(CancellationToken ct)
     {
-        _log.LogInformation("DispatchWorker iniciado");
-
+        _log.LogInformation("DispatchWorker iniciado.");
         while (!ct.IsCancellationRequested)
         {
-            var job = await _dispatch.DequeueAsync(ct);
+            var jobObj = await _q.DequeueAsync(ct);
+            if (jobObj is not DispatchJob job) continue;
 
-            using var scope = _scope.CreateScope();
-            var session = scope.ServiceProvider.GetRequiredService<ISession>();
+            using var s = _sf.OpenSession();
+            var imp = await s.GetAsync<ImportBatch>(job.ImportId, ct);
+            if (imp is null || string.IsNullOrWhiteSpace(imp.StorageUri) || !File.Exists(imp.StorageUri)) continue;
+
+            var workDir = imp.WorkingDir ?? Path.Combine(AppContext.BaseDirectory, "staging", imp.Id.ToString("N"));
+            Directory.CreateDirectory(workDir);
+            var outCsv = Path.Combine(workDir, "csv");
+            Directory.CreateDirectory(outCsv);
 
             try
             {
-                var import = await session.GetAsync<ImportBatch>(job.ImportId, ct);
-                if (import is null) continue;
-
-                // Stage "Registros" (0)
-                await CreateOrResetStageAsync(session, import.Id, 0, "Registros", ct);
-                _stages.Enqueue(new StageJob(import.Id, 0, "Registros"));
-
-                // Etapas 1..4
-                for (int etapa = 1; etapa <= 4; etapa++)
+                using (var tx = s.BeginTransaction())
                 {
-                    await CreateOrResetStageAsync(session, import.Id, etapa, $"Etapa {etapa}", ct);
-                    _stages.Enqueue(new StageJob(import.Id, etapa, $"Etapa {etapa}"));
+                    imp.Status = 1; // Processando
+                    imp.WorkingDir = workDir;
+                    await s.UpdateAsync(imp, ct);
+
+                    for (int e = 1; e <= 4; e++)
+                    {
+                        var st = await s.Query<ImportStage>().FirstOrDefaultAsync(x => x.ImportId == imp.Id && x.EtapaId == e, ct);
+                        if (st is null)
+                        {
+                            st = new ImportStage
+                            {
+                                ImportId = imp.Id,
+                                EtapaId = e,
+                                Name = $"Etapa {e}",
+                                Status = 1,
+                                StartedAtUtc = DateTime.UtcNow,
+                                UpdatedAtUtc = DateTime.UtcNow
+                            };
+                            await s.SaveAsync(st, ct);
+                        }
+                        else
+                        {
+                            st.Status = 1;
+                            st.StartedAtUtc = DateTime.UtcNow;
+                            st.UpdatedAtUtc = DateTime.UtcNow;
+                            await s.UpdateAsync(st, ct);
+                        }
+                    }
+                    await tx.CommitAsync(ct);
                 }
 
-                _log.LogInformation("Import {Id}: estágios criados e enfileirados", import.Id);
+                // Split XLSX em CSVs
+                await _splitter.SplitAsync(imp.StorageUri!, outCsv, ct);
+
+                // Atualiza SourcePath e enfileira etapas
+                using (var tx2 = s.BeginTransaction())
+                {
+                    for (int e = 1; e <= 4; e++)
+                    {
+                        var st = await s.Query<ImportStage>().FirstOrDefaultAsync(x => x.ImportId == imp.Id && x.EtapaId == e, ct);
+                        if (st is not null)
+                        {
+                            st.SourcePath = Path.Combine(outCsv, $"etapa_{e}.csv");
+                            await s.UpdateAsync(st, ct);
+                        }
+                    }
+                    await tx2.CommitAsync(ct);
+                }
+
+                for (int e = 1; e <= 4; e++)
+                    _q.Enqueue(new StageProcessJob(imp.Id, e));
             }
             catch (Exception ex)
             {
-                _log.LogError(ex, "Falha ao preparar estágios para import {Id}", job.ImportId);
-                await MarkImportErrorAsync(session, job.ImportId, ex.Message, ct);
+                _log.LogError(ex, "Falha no DispatchWorker para import {Imp}", imp.Id);
+                using var tx = s.BeginTransaction();
+                imp.Status = 3; imp.Error = ex.Message;
+                await s.UpdateAsync(imp, ct);
+                await tx.CommitAsync(ct);
             }
         }
-    }
-
-    private static async Task CreateOrResetStageAsync(ISession session, Guid importId, int etapaId, string name, CancellationToken ct)
-    {
-        using var tx = session.BeginTransaction();
-
-        var st = await session.Query<ImportStage>()
-            .FirstOrDefaultAsync(s => s.ImportId == importId && s.EtapaId == etapaId, ct);
-
-        if (st is null)
-        {
-            st = new ImportStage { ImportId = importId, EtapaId = etapaId, Name = name, Status = 1 };
-            await session.SaveAsync(st, ct);
-        }
-        else
-        {
-            st.Status = 1;
-            st.StartedAtUtc = null;
-            st.FinishedAtUtc = null;
-            st.Error = null;
-            st.ProcessedRows = null;
-            st.UpdatedAtUtc = DateTime.UtcNow;
-            await session.UpdateAsync(st, ct);
-        }
-
-        await tx.CommitAsync(ct);
-    }
-
-    private static async Task MarkImportErrorAsync(ISession session, Guid importId, string msg, CancellationToken ct)
-    {
-        using var tx = session.BeginTransaction();
-        var imp = await session.GetAsync<ImportBatch>(importId, ct);
-        if (imp != null) { imp.Status = 3; imp.Error = msg; await session.UpdateAsync(imp, ct); }
-        await tx.CommitAsync(ct);
     }
 }

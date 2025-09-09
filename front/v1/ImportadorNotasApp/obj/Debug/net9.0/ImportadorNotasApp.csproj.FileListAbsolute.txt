@@ -1108,10 +1108,10 @@ C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\D
 C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\refint\ImportadorNotasApp.dll
 C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\ImportadorNotasApp.pdb
 C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\ref\ImportadorNotasApp.dll
-C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\bin\Debug\net9.0\wwwroot\_framework\ImportadorNotasApp.e6ot0753lh.pdb
-C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\bin\Debug\net9.0\wwwroot\_framework\ImportadorNotasApp.lyrk3t6j4s.wasm
-C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\bin\Debug\net9.0\wwwroot\_framework\ImportadorNotasApp.e6ot0753lh.pdb.gz
-C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\bin\Debug\net9.0\wwwroot\_framework\ImportadorNotasApp.lyrk3t6j4s.wasm.gz
-C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\compressed\f2nizrmeeb-lyrk3t6j4s.gz
-C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\compressed\b8vibdvxag-e6ot0753lh.gz
-C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\compressed\9uhxsvbs1m-8bamrbei6h.gz
+C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\bin\Debug\net9.0\wwwroot\_framework\ImportadorNotasApp.rhj0vj4kc3.pdb
+C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\bin\Debug\net9.0\wwwroot\_framework\ImportadorNotasApp.m6leiu96jw.wasm
+C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\bin\Debug\net9.0\wwwroot\_framework\ImportadorNotasApp.rhj0vj4kc3.pdb.gz
+C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\bin\Debug\net9.0\wwwroot\_framework\ImportadorNotasApp.m6leiu96jw.wasm.gz
+C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\compressed\f2nizrmeeb-m6leiu96jw.gz
+C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\compressed\b8vibdvxag-rhj0vj4kc3.gz
+C:\Users\docto\projetos\javascript\simplefront\front\v1\ImportadorNotasApp\obj\Debug\net9.0\compressed\9uhxsvbs1m-wvkjiudfvc.gz

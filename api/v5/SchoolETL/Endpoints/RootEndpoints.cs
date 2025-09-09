@@ -6,7 +6,9 @@ public static class RootEndpoints
 {
     public static IEndpointRouteBuilder MapRootEndpoints(this IEndpointRouteBuilder app)
     {
-        app.MapGet("/", () => Results.Redirect("/swagger"));
+        app.MapGet("/", () => Results.Redirect("/swagger")).WithOpenApi();
+        ;
         return app;
     }
 }
+
