@@ -48,7 +48,7 @@ public static class StudentsEndpoints
                     f.Frequencia,
                     Sit = f.Situacao != null ? f.Situacao!.Descricao : null,
                     DiscSigla = f.Disciplina!.Sigla,
-                    Area = f.Disciplina!.NomeArea
+                    Area = f.Disciplina!.Nome
                 })
                 .ToListAsync(ct);
 
@@ -114,7 +114,7 @@ public static class StudentsEndpoints
                 .Select(f => new
                 {
                     f.PeriodoAvaliativoId,
-                    Area = f.Disciplina!.NomeArea,
+                    Area = f.Disciplina!.Nome,
                     DisciplinaId = f.DisciplinaId,
                     Sit = f.Situacao != null ? f.Situacao!.Descricao : null
                 })

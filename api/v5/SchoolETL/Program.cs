@@ -48,5 +48,7 @@ app.MapImportsQueryEndpoints();     // [3] GET  /api/imports/{id}/status
 app.MapStudentsEndpoints();         // [4] GET  /api/imports/{id}/alunos && [5] GET  /api/alunos/{alunoId}
 app.MapStudentObservationsEndpoints();
 app.MapStudentsInfoCsvEndpoints();
+app.MapAreasEndpoints();
+app.MapDisciplinasEndpoints();
 
 app.Run();
